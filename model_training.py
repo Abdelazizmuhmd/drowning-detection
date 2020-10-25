@@ -15,7 +15,7 @@ while True:
     _, img = cap.read()
     height, width, _ = img.shape
 
-    blob = cv2.dnn.blobFromImage(img, 1/255, (416, 416), (0,0,0), swapRB=True, crop=False)
+    blob = cv2.dnn.blobFromImage(img, 1/255, (416, 416), (0,0,0), swapRB=True, crop=False) #input to model
     net.setInput(blob)
     output_layers_names = net.getUnconnectedOutLayersNames()
     layerOutputs = net.forward(output_layers_names)

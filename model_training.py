@@ -15,6 +15,8 @@ font = cv2.FONT_HERSHEY_PLAIN
 colors = np.random.uniform(0, 255, size=(100, 3))
 
 
+
+
 while True:
     _, img = cap.read()
     height, width, _ = img.shape
@@ -27,6 +29,10 @@ while True:
     boxes = []
     confidences = []
     class_ids = []
+
+
+
+
 
     for output in layerOutputs:
         for detection in output:
@@ -48,6 +54,10 @@ while True:
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.2, 0.4)
 
+
+
+
+
     if len(indexes)>0:
         for i in indexes.flatten():
             x, y, w, h = boxes[i]
@@ -57,12 +67,21 @@ while True:
             cv2.rectangle(img, (x,y), (x+w, y+h), color, 2)
             cv2.putText(img, label + " " + confidence, (x, y+20), font, 2, (255,255,255), 2)
 
+
+
+
+
+
     cv2.imshow('Image', img)
     key = cv2.waitKey(1)
     if key==27:
         break
 
-    #key = cv2.waitKey(1)
+
+
+
+
+    #key = cv2.waitKey(60)
 
 cap.release()
 cv2.destroyAllWindows()

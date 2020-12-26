@@ -21,13 +21,13 @@ class _OrgProfile extends State<OrgProfile> {
     return showDialog(
         context: context,
         builder: (context) {
-          int itemCount = 0;
+          int itemCount = int.tryParse(val);
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
               title: Text("Your $type"),
               content: Container(
-                height: 125,
-                width: 250,
+                height: 370,
+                width: 550,
                 child: Form(
                   key: _formKey,
                   child: type == "No."
@@ -58,6 +58,38 @@ class _OrgProfile extends State<OrgProfile> {
                                   // If the form is valid, Go to Home screen.
                                 }
                               },
+                            ),
+                            Expanded(
+                              child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: itemCount,
+                                itemBuilder: (context, i) {
+                                  return Row(
+                                    children: [
+                                      Text("Swimming pool number $i :",
+                                          style: TextStyle(fontSize: 13)),
+                                      MaterialButton(
+                                          onPressed: () => {},
+                                          color: Colors.green[500],
+                                          child: Text("Upload")),
+                                    ],
+                                  );
+                                },
+                                /*children: [
+                                    for (int i = 1; i <= itemCount; i++)
+                                      Row(
+                                        children: [
+                                          Text("Swimming pool number $i :",
+                                              style: TextStyle(fontSize: 15)),
+                                          MaterialButton(
+                                              onPressed: () => {},
+                                              color: Colors.green[500],
+                                              child: Text("Upload")),
+                                        ],
+                                      )
+                                  ]*/
+                              ),
                             )
                           ],
                         )
@@ -164,7 +196,9 @@ class _OrgProfile extends State<OrgProfile> {
             test = TextFormField(
               enabled: false,
               decoration: InputDecoration(
-                  hintText: hintText,
+                  hintText: type == "No."
+                      ? "Number of swimming Pools is $hintText"
+                      : hintText,
                   hintStyle: TextStyle(
                     letterSpacing: 2,
                     color: Colors.black54,
@@ -285,7 +319,7 @@ class _OrgProfile extends State<OrgProfile> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               textfield(hintText: "Organization Name : Al ahly", type: "Name"),
-              textfield(hintText: "Number of swimming Pools : 5", type: "No."),
+              textfield(hintText: "8", type: "No."),
               textfield(hintText: "Password:******", type: "Password"),
               textfield(hintText: "Logout", type: "Logout"),
             ],

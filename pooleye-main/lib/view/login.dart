@@ -139,11 +139,11 @@ class LoginState extends State<Login> {
                         // otherwise.
                         if (_formKey.currentState.validate()) {
                           //If the form is valid, Go to Home screen.
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => daily_report()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => daily_report()),
+                          );
 
                           _saveData(_usernameField.text, _passwordField.text);
                         }

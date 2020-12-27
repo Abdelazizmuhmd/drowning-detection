@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pooleye/model/report.dart';
+import 'package:pooleye/view/OrganizationProfile.dart';
 import 'package:pooleye/view/login.dart';
 
 class daily_report extends StatefulWidget {
@@ -205,7 +206,12 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OrgProfile()),
+              );
+            },
           ),
           ListTile(
               leading: Icon(Icons.exit_to_app),

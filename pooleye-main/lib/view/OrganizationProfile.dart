@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class OrgProfile extends StatefulWidget {
-  @override
   static Pattern pattern;
   _OrgProfile createState() => _OrgProfile();
 }
 
 class _OrgProfile extends State<OrgProfile> {
-  final TextEditingController _controller = new TextEditingController();
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
   TextFormField test;
   static final validCharacters = RegExp(r"^[a-zA-Z]+$");
@@ -72,7 +70,9 @@ class _OrgProfile extends State<OrgProfile> {
                                       MaterialButton(
                                           onPressed: () => {},
                                           color: Colors.green[500],
-                                          child: Text("Upload")),
+                                          child: Text("Upload",
+                                              style: TextStyle(
+                                                  color: Colors.white))),
                                     ],
                                   );
                                 },
@@ -276,6 +276,7 @@ class _OrgProfile extends State<OrgProfile> {
                             Icons.edit,
                             color: Colors.white,
                           ),
+                          onPressed: () {},
                         ),
                       ),
                     ),

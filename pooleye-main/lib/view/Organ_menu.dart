@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/OrganizationProfile.dart';
+import 'package:pooleye/view/lifeguardProfile.dart';
+import 'package:pooleye/view/lifeguard_notifications.dart';
 import 'package:pooleye/view/login.dart';
 import 'package:pooleye/view/organ_accounts.dart';
 
@@ -13,7 +15,7 @@ class SideDrawer extends StatelessWidget {
           DrawerHeader(
             child: Center(
               child: Text(
-                'Organisation Manager Account',
+                'Account',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
@@ -24,7 +26,7 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.receipt_rounded),
-            title: Text('Daily Reports'),
+            title: Text('Organisation Daily Reports'),
             onTap: () => {},
           ),
           ListTile(
@@ -39,11 +41,31 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.person),
-            title: Text('Profile'),
+            title: Text('Organisation Profile'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => OrgProfile()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.notifications_active),
+            title: Text('Lifeguard Notifications'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => lifeguard_notify()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.pool),
+            title: Text('Lifeguard Profile'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => lifeguardProfile()),
               );
             },
           ),

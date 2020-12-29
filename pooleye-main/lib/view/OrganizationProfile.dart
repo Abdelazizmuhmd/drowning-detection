@@ -260,7 +260,7 @@ class _OrgProfile extends State<OrgProfile> {
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white, width: 5),
                           shape: BoxShape.circle,
-                          color: Colors.red,
+                          color: Colors.blueAccent.withOpacity(0.2),
                           image: DecorationImage(
                               image: AssetImage("images/AlAhly.jpeg"))),
                     ),

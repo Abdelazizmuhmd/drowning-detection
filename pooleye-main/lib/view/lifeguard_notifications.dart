@@ -319,6 +319,13 @@ class lifeguard extends State<lifeguard_notify> {
         backgroundColor: c1,
       ),
       body: _buildChatList(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showReport();
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.red,
+      ),
     );
   }
 }

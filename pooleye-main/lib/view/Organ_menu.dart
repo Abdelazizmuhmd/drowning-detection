@@ -3,6 +3,8 @@ import 'package:pooleye/view/OrganizationProfile.dart';
 import 'package:pooleye/view/lifeguardProfile.dart';
 import 'package:pooleye/view/lifeguard_notifications.dart';
 import 'package:pooleye/view/login.dart';
+import 'package:pooleye/view/medicProfile.dart';
+import 'package:pooleye/view/medic_notifications.dart';
 import 'package:pooleye/view/organ_accounts.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -49,6 +51,16 @@ class SideDrawer extends StatelessWidget {
               );
             },
           ),
+          SizedBox(
+            height: 15,
+          ),
+          Divider(
+            color: Colors.blueGrey,
+            height: 15,
+            thickness: 2,
+            indent: 0,
+            endIndent: 50,
+          ),
           ListTile(
             leading: Icon(Icons.notifications_active),
             title: Text('Lifeguard Notifications'),
@@ -66,6 +78,36 @@ class SideDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => lifeguardProfile()),
+              );
+            },
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Divider(
+            color: Colors.blueGrey,
+            height: 15,
+            thickness: 2,
+            indent: 0,
+            endIndent: 50,
+          ),
+          ListTile(
+            leading: Icon(Icons.local_hospital_outlined),
+            title: Text('Medic Notifications'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => medic_notify_page()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Medic Profile'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => medicProfile()),
               );
             },
           ),

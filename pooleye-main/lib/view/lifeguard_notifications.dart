@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pooleye/model/lifeGuard_notifications.dart';
-import 'package:pooleye/model/report.dart';
+import 'package:pooleye/model/lifeguard_notifiactions.dart';
 import 'package:pooleye/view/Organ_menu.dart';
 
 class lifeguard_notify extends StatefulWidget {
@@ -259,12 +258,12 @@ class lifeguard extends State<lifeguard_notify> {
     return ListView.separated(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: /*1*/ (context, i) {
-        return _buildRow(all_notifications.getLifeguardNotifications()[i]);
+        return _buildRow(all_notifications.getLifeguardNotifiactions()[i]);
       },
       separatorBuilder: (context, index) {
         return Divider();
       },
-      itemCount: all_notifications.getLifeguardNotifications().length,
+      itemCount: all_notifications.getLifeguardNotifiactions().length,
     );
   }
   // #enddocregion _buildSuggestions

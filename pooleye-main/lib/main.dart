@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pooleye/view/login.dart';
+import 'package:pooleye/view/loginView.dart';
 
 void main() {
   runApp(new MaterialApp(

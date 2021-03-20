@@ -164,10 +164,10 @@ class LoginState extends State<Login> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Signup()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => Signup()),
+                        // );
                       }),
                 ],
               ),

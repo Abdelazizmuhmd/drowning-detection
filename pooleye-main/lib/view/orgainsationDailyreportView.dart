@@ -158,7 +158,7 @@ class daily extends State<daily_report> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      drawer: SideDrawer('organisationManager'),
       appBar: AppBar(
         title: Row(
           children: [

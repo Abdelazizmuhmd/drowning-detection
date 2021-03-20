@@ -309,7 +309,7 @@ class lifeguard extends State<lifeguard_notify> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      drawer: SideDrawer('lifeguard'),
       appBar: AppBar(
         title: Row(
           children: [

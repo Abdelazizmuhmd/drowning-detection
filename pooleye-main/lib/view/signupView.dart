@@ -23,14 +23,14 @@ class SignupState extends State<Signup> {
   var _password = new TextEditingController();
 
   static final validCharacters = RegExp(r"^[a-zA-Z]+$");
-  //bool visible_manager = false;
-  //bool visible_others = false;
+  bool visible_manager = false;
+  bool visible_others = false;
   List<String> _locations = [
     'Organisation Manager',
     'Lifeguard',
     'Medical Team member'
   ]; // Option 2
-  String _selectedLocation; // Option 2
+  String _selectedLocation = "Organisation Manager"; // Option 2
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -69,51 +69,52 @@ class SignupState extends State<Signup> {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    // Row(
-                    //   children: [
-                    //     Icon(
-                    //       Icons.work,
-                    //       color: Colors.blueGrey,
-                    //       size: 30.0,
-                    //     ),
-                    //     new Padding(padding: new EdgeInsets.all(10.0)),
-                    //     // DropdownButton(
-                    //     //   hint: Text(
-                    //     //       'Please choose Your Role'), // Not necessary for Option 1
-                    //     //   value: _selectedLocation,
-                    //     //   onChanged: (newValue) {
-                    //     //     if (newValue == 'Organisation Manager') {
-                    //     //       setState(() {
-                    //     //         visible_others = false;
-                    //     //         visible_manager = true;
-                    //     //       });
-                    //     //     }
-                    //     //     if (newValue == 'Lifeguard') {
-                    //     //       setState(() {
-                    //     //         visible_others = true;
-                    //     //         visible_manager = false;
-                    //     //       });
-                    //     //     }
-                    //     //     if (newValue == 'Medical Team member') {
-                    //     //       setState(() {
-                    //     //         visible_others = true;
-                    //     //         visible_manager = false;
-                    //     //       });
-                    //     //     }
-                    //     //     setState(() {
-                    //     //       _selectedLocation = newValue;
-                    //     //     });
-                    //     //   },
-                    //     //   items: _locations.map((location) {
-                    //     //     return DropdownMenuItem(
-                    //     //       child: new Text(location),
-                    //     //       value: location,
-                    //     //     );
-                    //     //   }).toList(),
-                    //     // ),
-                    //   ],
-                    // ),
-                    // new Padding(padding: new EdgeInsets.all(20.0)),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.work,
+                          color: Colors.blueGrey,
+                          size: 30.0,
+                        ),
+                        new Padding(padding: new EdgeInsets.all(10.0)),
+                        DropdownButton(
+                          value: _selectedLocation,
+                          onChanged: (newValue) {
+                            if (newValue == 'Organisation Manager') {
+                              setState(() {
+                                visible_others = false;
+                                visible_manager = true;
+                                role = "organisationManager";
+                              });
+                            }
+                            if (newValue == 'Lifeguard') {
+                              setState(() {
+                                visible_others = true;
+                                visible_manager = false;
+                                role = "lifeguard";
+                              });
+                            }
+                            if (newValue == 'Medical Team member') {
+                              setState(() {
+                                visible_others = true;
+                                visible_manager = false;
+                                role = "medic";
+                              });
+                            }
+                            setState(() {
+                              _selectedLocation = newValue;
+                            });
+                          },
+                          items: _locations.map((location) {
+                            return DropdownMenuItem(
+                              child: new Text(location),
+                              value: location,
+                            );
+                          }).toList(),
+                        ),
+                      ],
+                    ),
+                    new Padding(padding: new EdgeInsets.all(20.0)),
                     TextFormField(
                       controller: _email,
                       validator: (value) {
@@ -169,94 +170,91 @@ class SignupState extends State<Signup> {
                       obscureText: true,
                     ),
                     new Padding(padding: new EdgeInsets.all(20.0)),
-                    //Visibility(
-                    //visible: visible_manager,
-                    //child:
-                    TextFormField(
-                      controller: _organisationName,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Please Enter The Organisation Name';
-                        }
-                        if (value.length < 3) {
-                          return 'Organisation Name is too short';
-                        }
+                    Visibility(
+                      visible: visible_manager,
+                      child: TextFormField(
+                        controller: _organisationName,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please Enter The Organisation Name';
+                          }
+                          if (value.length < 3) {
+                            return 'Organisation Name is too short';
+                          }
 
-                        if (value.length > 18) {
-                          return 'Organisation Name is too long';
-                        }
+                          if (value.length > 18) {
+                            return 'Organisation Name is too long';
+                          }
 
-                        if (!validCharacters.hasMatch(value)) {
-                          return 'Organisation Name should be alphabets only';
-                        }
-                        return null;
-                      },
-                      decoration: new InputDecoration(
-                          hintText: 'Organisation Name',
-                          border: const OutlineInputBorder(),
-                          icon: new Icon(
-                            Icons.house_outlined,
-                            color: Colors.blueGrey,
-                            size: 30.0,
-                          )),
+                          if (!validCharacters.hasMatch(value)) {
+                            return 'Organisation Name should be alphabets only';
+                          }
+                          return null;
+                        },
+                        decoration: new InputDecoration(
+                            hintText: 'Organisation Name',
+                            border: const OutlineInputBorder(),
+                            icon: new Icon(
+                              Icons.house_outlined,
+                              color: Colors.blueGrey,
+                              size: 30.0,
+                            )),
+                      ),
                     ),
-                    //),
-                    //Visibility(
-                    //visible: visible_others,
-                    //child:
-                    // TextFormField(
-                    //   validator: (value) {
-                    //     if (value.isEmpty) {
-                    //       return 'Please Enter The Organisation ID';
-                    //     }
-                    //     if (value.length < 3) {
-                    //       return 'Organisation ID is too short';
-                    //     }
+                    Visibility(
+                      visible: visible_others,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please Enter The Organisation ID';
+                          }
+                          if (value.length < 3) {
+                            return 'Organisation ID is too short';
+                          }
 
-                    //     if (value.length > 18) {
-                    //       return 'Organisation ID is too long';
-                    //     }
-                    //     return null;
-                    //   },
-                    //   decoration: new InputDecoration(
-                    //       hintText: 'Organisation ID',
-                    //       border: const OutlineInputBorder(),
-                    //       icon: new Icon(
-                    //         Icons.ad_units,
-                    //         color: Colors.blueGrey,
-                    //         size: 30.0,
-                    //       )),
-                    // ),
-                    //),
-                    new Padding(padding: new EdgeInsets.all(20.0)),
-                    //Visibility(
-                    //visible: visible_manager,
-                    //child:
-                    // TextFormField(
-                    //   keyboardType: TextInputType.number,
-                    //   validator: (value) {
-                    //     if (value.isEmpty) {
-                    //       return 'Please Enter The Number of Swimming Pools';
-                    //     }
-                    //     if (value.length < 1) {
-                    //       return 'The Number of Swimming Pools is too short';
-                    //     }
+                          if (value.length > 18) {
+                            return 'Organisation ID is too long';
+                          }
+                          return null;
+                        },
+                        decoration: new InputDecoration(
+                            hintText: 'Organisation ID',
+                            border: const OutlineInputBorder(),
+                            icon: new Icon(
+                              Icons.ad_units,
+                              color: Colors.blueGrey,
+                              size: 30.0,
+                            )),
+                      ),
+                    ),
+                    // new Padding(padding: new EdgeInsets.all(20.0)),
+                    // Visibility(
+                    //   visible: visible_manager,
+                    //   child: TextFormField(
+                    //     keyboardType: TextInputType.number,
+                    //     validator: (value) {
+                    //       if (value.isEmpty) {
+                    //         return 'Please Enter The Number of Swimming Pools';
+                    //       }
+                    //       if (value.length < 1) {
+                    //         return 'The Number of Swimming Pools is too short';
+                    //       }
 
-                    //     if (value.length > 5) {
-                    //       return 'The Number of Swimming Pools is too long';
-                    //     }
-                    //     return null;
-                    //   },
-                    //   decoration: new InputDecoration(
-                    //       hintText: 'Number of Swimming Pools',
-                    //       border: const OutlineInputBorder(),
-                    //       icon: new Icon(
-                    //         Icons.pool,
-                    //         color: Colors.blueGrey,
-                    //         size: 30.0,
-                    //       )),
+                    //       if (value.length > 5) {
+                    //         return 'The Number of Swimming Pools is too long';
+                    //       }
+                    //       return null;
+                    //     },
+                    //     decoration: new InputDecoration(
+                    //         hintText: 'Number of Swimming Pools',
+                    //         border: const OutlineInputBorder(),
+                    //         icon: new Icon(
+                    //           Icons.pool,
+                    //           color: Colors.blueGrey,
+                    //           size: 30.0,
+                    //         )),
+                    //   ),
                     // ),
-                    //),
                     widget._isLoading
                         ? CircularProgressIndicator()
                         : Center(

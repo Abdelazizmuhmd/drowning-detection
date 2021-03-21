@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pooleye/view/appMenuView.dart';
 
 class medic_notify_page extends StatefulWidget {
   @override
@@ -178,6 +179,7 @@ class medic extends State<medic_notify_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SideDrawer('medic'),
       appBar: AppBar(
         title: Row(
           children: [

@@ -3,7 +3,7 @@ import 'package:pooleye/view/loginView.dart';
 
 class Signup extends StatefulWidget {
   final void Function(String orgainsationName, String role, String email,
-      String password, BuildContext ctx) submitFn;
+      String password, BuildContext ctx, String organisationCode) submitFn;
   final bool _isLoading;
   Signup(this.submitFn, this._isLoading);
   @override
@@ -21,9 +21,10 @@ class SignupState extends State<Signup> {
   var _organisationName = new TextEditingController();
   String role = "organisationManager";
   var _password = new TextEditingController();
+  var orgId = new TextEditingController();
 
   static final validCharacters = RegExp(r"^[a-zA-Z]+$");
-  bool visible_manager = false;
+  bool visible_manager = true;
   bool visible_others = false;
   List<String> _locations = [
     'Organisation Manager',
@@ -204,6 +205,7 @@ class SignupState extends State<Signup> {
                     Visibility(
                       visible: visible_others,
                       child: TextFormField(
+                        controller: orgId,
                         validator: (value) {
                           if (value.isEmpty) {
                             return 'Please Enter The Organisation ID';
@@ -212,7 +214,7 @@ class SignupState extends State<Signup> {
                             return 'Organisation ID is too short';
                           }
 
-                          if (value.length > 18) {
+                          if (value.length > 35) {
                             return 'Organisation ID is too long';
                           }
                           return null;
@@ -275,6 +277,7 @@ class SignupState extends State<Signup> {
                                         _email.text.trim(),
                                         _password.text.trim(),
                                         context,
+                                        orgId.text.trim(),
                                       );
                                     }
                                   },

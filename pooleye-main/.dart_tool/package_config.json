@@ -26,6 +26,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "clipboard",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard-0.1.2+8",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0-nullsafety.1",
       "packageUri": "lib/",
@@ -398,7 +404,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-03-20T19:07:09.856938Z",
+  "generated": "2021-03-23T20:50:32.546466Z",
   "generator": "pub",
   "generatorVersion": "2.10.4"
 }

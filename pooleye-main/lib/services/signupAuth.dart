@@ -18,14 +18,14 @@ class AuthForm extends StatefulWidget {
 }
 
 class AuthFormState extends State<AuthForm> {
-  final FirebaseMessaging fbm = FirebaseMessaging();
+  //final FirebaseMessaging fbm = FirebaseMessaging();
   final _auth = FirebaseAuth.instance;
   UserCredential userCredential;
   bool _isLoading = false;
   String profileImage = null;
   var rng = new Random();
 
-  FirebaseFirestore db = FirebaseFirestore.instance;
+  //FirebaseFirestore db = FirebaseFirestore.instance;
 
   bool check = true;
   bool codeCheck = true;

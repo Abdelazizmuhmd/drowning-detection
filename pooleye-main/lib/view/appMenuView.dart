@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/services/loginAuth.dart';
 import 'package:pooleye/view/OrganizationProfileView.dart';
+import 'package:pooleye/view/generatedOrgCodeView.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/lifeguardProfileView.dart';
 import 'package:pooleye/view/loginView.dart';
@@ -54,6 +55,16 @@ class SideDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => OrgProfile()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.copy_rounded),
+              title: Text('Organisation Code'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GeneratedCode()),
                 );
               },
             ),

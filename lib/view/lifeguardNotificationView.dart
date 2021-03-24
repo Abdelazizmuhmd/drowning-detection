@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/appMenuView.dart';
+import 'package:pooleye/model/lifeguardReport.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import "package:provider/provider.dart";
+import "package:pooleye/controller/lifeguardReportController.dart";
 
 class lifeguard_notify extends StatefulWidget {
   @override
@@ -258,22 +263,28 @@ class lifeguard extends State<lifeguard_notify> {
   // #enddocregion RWS-var
 
   // #docregion _buildSuggestions
-  Widget _buildChatList() {
-    return ListView.separated(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: /*1*/ (context, i) {
-        return _buildRow(lifeGuardNotify[i]);
-      },
-      separatorBuilder: (context, index) {
-        return Divider();
-      },
-      itemCount: lifeGuardNotify.length,
-    );
+  _buildChatList() {
+    List<LifeguardReport> reportList =
+        Provider.of<List<LifeguardReport>>(context);
+    return (reportList != null)
+        ? Container(
+            child: ListView.separated(
+              padding: const EdgeInsets.all(16.0),
+              itemBuilder: /*1*/ (context, i) {
+                return _buildRow(reportList[i].text);
+              },
+              separatorBuilder: (context, index) {
+                return Divider();
+              },
+              itemCount: reportList.length,
+            ),
+          )
+        : Text("Loading");
   }
   // #enddocregion _buildSuggestions
 
   // #docregion _buildRow
-  Widget _buildRow(String name) {
+  _buildRow(String name) {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: Colors.white,
@@ -331,5 +342,29 @@ class lifeguard extends State<lifeguard_notify> {
         backgroundColor: Colors.red,
       ),
     );
+  }
+}
+
+class BuildList extends StatefulWidget {
+  @override
+  _BuildListState createState() => _BuildListState();
+}
+
+class _BuildListState extends State<BuildList> {
+  LifeguardReportController LFC = LifeguardReportController();
+  Stream<List<LifeguardReport>> val;
+  @override
+  void initState() {
+    LFC.fetchLifeguardReports().then((value) {
+      val = LFC.lifeguardreport;
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamProvider<List<LifeguardReport>>.value(
+        value: val, child: lifeguard_notify());
   }
 }

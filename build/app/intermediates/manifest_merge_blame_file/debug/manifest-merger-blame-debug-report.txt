@@ -12,26 +12,26 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-15-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+15-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
-16-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+16-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+16-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:24:5-79
-17-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:24:22-76
+17-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:24:5-79
+17-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:24:22-76
 18    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:24:5-68
-18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:24:22-65
+18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:24:5-68
+18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:24:22-65
 19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-19-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:26:5-82
-19-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:26:22-79
+19-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:26:5-82
+19-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:26:22-79
 20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-20-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:5-110
-20-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:22-107
+20-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:5-110
+20-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:26:22-107
 21    <!--
 22 io.flutter.app.FlutterApplication is an android.app.Application that
 23         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -40,30 +40,30 @@
 26         FlutterApplication and put your custom class here.
 27    -->
 28    <application
-28-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:8:5-46:19
+28-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:8:5-46:19
 29        android:name="io.flutter.app.FlutterApplication"
-29-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:9:9-57
+29-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:9:9-57
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:24:18-86
+30-->[androidx.core:core:1.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3e26ef26d15f163a2f1a31a2130a0254\core-1.1.0\AndroidManifest.xml:24:18-86
 31        android:debuggable="true"
 32        android:icon="@mipmap/ic_launcher"
-32-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:11:9-43
+32-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:11:9-43
 33        android:label="pooleye" >
-33-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:10:9-32
+33-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:10:9-32
 34        <activity
-34-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:12:9-40:20
+34-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:12:9-40:20
 35            android:name="com.example.pooleye.MainActivity"
-35-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:13:13-41
+35-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:13:13-41
 36            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-36-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:16:13-163
+36-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:16:13-163
 37            android:hardwareAccelerated="true"
-37-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:17:13-47
+37-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:17:13-47
 38            android:launchMode="singleTop"
-38-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:14:13-43
+38-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:14:13-43
 39            android:theme="@style/LaunchTheme"
-39-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:15:13-47
+39-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:15:13-47
 40            android:windowSoftInputMode="adjustResize" >
-40-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:18:13-55
+40-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:18:13-55
 41
 42            <!--
 43                 Specifies an Android theme to apply to this Activity as soon as
@@ -72,11 +72,11 @@
 46                 to determine the Window background behind the Flutter UI.
 47            -->
 48            <meta-data
-48-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:23:13-26:17
+48-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:23:13-26:17
 49                android:name="io.flutter.embedding.android.NormalTheme"
-49-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:24:15-70
+49-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:24:15-70
 50                android:resource="@style/NormalTheme" />
-50-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:25:15-52
+50-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:25:15-52
 51            <!--
 52                 Displays an Android View that continues showing the launch screen
 53                 Drawable until Flutter paints its first frame, then this splash
@@ -85,21 +85,21 @@
 56                 Flutter's first frame.
 57            -->
 58            <meta-data
-58-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:32:13-35:17
+58-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:32:13-35:17
 59                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-59-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:33:15-79
+59-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:33:15-79
 60                android:resource="@drawable/launch_background" />
-60-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:34:15-61
+60-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:34:15-61
 61
 62            <intent-filter>
-62-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:36:13-39:29
+62-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:36:13-39:29
 63                <action android:name="android.intent.action.MAIN" />
-63-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:37:17-68
-63-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:37:25-66
+63-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:37:17-68
+63-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:37:25-66
 64
 65                <category android:name="android.intent.category.LAUNCHER" />
-65-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:38:17-76
-65-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:38:27-74
+65-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:38:17-76
+65-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:38:27-74
 66            </intent-filter>
 67        </activity>
 68        <!--
@@ -107,226 +107,226 @@
 70             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 71        -->
 72        <meta-data
-72-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:43:9-45:33
+72-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:43:9-45:33
 73            android:name="flutterEmbedding"
-73-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:44:13-44
+73-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:44:13-44
 74            android:value="2" />
-74-->D:\AndroidStudioProjects\drowning-detection\pooleye-main\android\app\src\main\AndroidManifest.xml:45:13-30
+74-->C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\android\app\src\main\AndroidManifest.xml:45:13-30
 75
 76        <service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService" >
-76-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
-76-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-101
+76-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+76-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-101
 77            <intent-filter>
-77-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+77-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
 78                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-78-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
-78-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+78-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+78-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
 79            </intent-filter>
 80        </service>
 81        <service
-81-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-17:19
+81-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-17:19
 82            android:name="com.google.firebase.components.ComponentDiscoveryService"
-82-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:18-89
+82-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:18-89
 83            android:directBootAware="true"
-83-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+83-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
 84            android:exported="false" >
-84-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:76:13-37
+84-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:76:13-37
 85            <meta-data
-85-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-16:85
+85-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-16:85
 86                android:name="com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar"
-86-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-127
+86-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-127
 87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-82
+87-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-82
 88            <meta-data
-88-->[:firebase_auth] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+88-->[:firebase_auth] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 89                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-89-->[:firebase_auth] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+89-->[:firebase_auth] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[:firebase_auth] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+90-->[:firebase_auth] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 91            <meta-data
-91-->[:cloud_firestore] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+91-->[:cloud_firestore] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-92-->[:cloud_firestore] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+92-->[:cloud_firestore] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
 93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:cloud_firestore] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+93-->[:cloud_firestore] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 94            <meta-data
-94-->[:firebase_storage] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+94-->[:firebase_storage] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 95                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-95-->[:firebase_storage] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+95-->[:firebase_storage] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[:firebase_storage] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+96-->[:firebase_storage] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 97            <meta-data
-97-->[:firebase_core] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+97-->[:firebase_core] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 98                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-98-->[:firebase_core] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+98-->[:firebase_core] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[:firebase_core] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+99-->[:firebase_core] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 100            <meta-data
-100-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
+100-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
 101                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-101-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:78:17-109
+101-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:78:17-109
 102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:79:17-82
+102-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:79:17-82
 103            <meta-data
-103-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\efefd336dd1495984e2bb0078e9251ed\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
+103-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3856b53679eb05f2d0942b6fbdbeffde\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:20:13-22:85
 104                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-104-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\efefd336dd1495984e2bb0078e9251ed\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:21:17-111
+104-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3856b53679eb05f2d0942b6fbdbeffde\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:21:17-111
 105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\efefd336dd1495984e2bb0078e9251ed\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:22:17-82
+105-->[com.google.firebase:firebase-firestore:22.1.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3856b53679eb05f2d0942b6fbdbeffde\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:22:17-82
 106            <meta-data
-106-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
+106-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 107                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-107-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
+107-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
 108                android:value="com.google.firebase.components.ComponentRegistrar" />
-108-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
+108-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\83427d6c7cea12c20dc188f2d495e58a\firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
 109            <meta-data
-109-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:39:13-41:85
+109-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:39:13-41:85
 110                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-110-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:40:17-119
+110-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:40:17-119
 111                android:value="com.google.firebase.components.ComponentRegistrar" />
-111-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:41:17-82
+111-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:41:17-82
 112            <meta-data
-112-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:32:13-34:85
+112-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:32:13-34:85
 113                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-113-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:33:17-96
+113-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:33:17-96
 114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:34:17-82
+114-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:34:17-82
 115            <meta-data
-115-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:30:13-32:85
+115-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:30:13-32:85
 116                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-116-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:31:17-139
+116-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:31:17-139
 117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:32:17-82
+117-->[com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a1d642a571731beebc925a7dbea79fd\play-services-measurement-api-18.0.2\AndroidManifest.xml:32:17-82
 118            <meta-data
-118-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
-119                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-119-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+118-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:28:13-30:85
+119                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+119-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:29:17-115
 120                android:value="com.google.firebase.components.ComponentRegistrar" />
-120-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+120-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:30:17-82
 121            <meta-data
-121-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:28:13-30:85
-122                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-122-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:29:17-115
+121-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+122                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+122-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
 123                android:value="com.google.firebase.components.ComponentRegistrar" />
-123-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\ea01993ac4cc0d1b75cffbd1481655c0\firebase-datatransport-17.0.10\AndroidManifest.xml:30:17-82
+123-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\e621b86a65d937145bd19c8efcb92faf\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
 124            <!--
 125                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
 126                clients to use it as well, by defining this registrar in their own core/common library.
 127            -->
 128            <meta-data
-128-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+128-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 129                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-129-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+129-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
 130                android:value="com.google.firebase.components.ComponentRegistrar" />
-130-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+130-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
 131        </service>
 132
 133        <provider
-133-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+133-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 134            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-134-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+134-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
 135            android:authorities="com.example.pooleye.flutter.image_provider"
-135-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+135-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
 136            android:exported="false"
-136-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+136-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
 137            android:grantUriPermissions="true" >
-137-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+137-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
 138            <meta-data
-138-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+138-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
 139                android:name="android.support.FILE_PROVIDER_PATHS"
-139-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+139-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
 140                android:resource="@xml/flutter_image_picker_file_paths" />
-140-->[:image_picker] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+140-->[:image_picker] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 141        </provider>
 142
 143        <activity
-143-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
+143-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
 144            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-144-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:28:13-80
+144-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:28:13-80
 145            android:excludeFromRecents="true"
-145-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:29:13-46
+145-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:29:13-46
 146            android:exported="true"
-146-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:30:13-36
+146-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:30:13-36
 147            android:launchMode="singleTask"
-147-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:31:13-44
+147-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:31:13-44
 148            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-148-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:32:13-72
+148-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:32:13-72
 149            <intent-filter>
-149-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:33:13-43:29
+149-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:33:13-43:29
 150                <action android:name="android.intent.action.VIEW" />
-150-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:17-69
-150-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:25-66
+150-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:17-69
+150-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:25-66
 151
 152                <category android:name="android.intent.category.DEFAULT" />
-152-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
-152-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
+152-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
+152-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
 153                <category android:name="android.intent.category.BROWSABLE" />
-153-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:17-78
-153-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
+153-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:17-78
+153-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
 154
 155                <data
-155-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:39:17-42:51
+155-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:39:17-42:51
 156                    android:host="firebase.auth"
-156-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:40:21-49
+156-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:40:21-49
 157                    android:path="/"
-157-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:41:21-37
+157-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:41:21-37
 158                    android:scheme="genericidp" />
-158-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:42:21-48
+158-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:42:21-48
 159            </intent-filter>
 160        </activity>
 161        <activity
-161-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
+161-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
 162            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-162-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:46:13-79
+162-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:46:13-79
 163            android:excludeFromRecents="true"
-163-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:47:13-46
+163-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:47:13-46
 164            android:exported="true"
-164-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:48:13-36
+164-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:48:13-36
 165            android:launchMode="singleTask"
-165-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:49:13-44
+165-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:49:13-44
 166            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-166-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:50:13-72
+166-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:50:13-72
 167            <intent-filter>
-167-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:51:13-61:29
+167-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:51:13-61:29
 168                <action android:name="android.intent.action.VIEW" />
-168-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:17-69
-168-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:25-66
+168-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:17-69
+168-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:34:25-66
 169
 170                <category android:name="android.intent.category.DEFAULT" />
-170-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
-170-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
+170-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
+170-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
 171                <category android:name="android.intent.category.BROWSABLE" />
-171-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:17-78
-171-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
+171-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:17-78
+171-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
 172
 173                <data
-173-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:39:17-42:51
+173-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:39:17-42:51
 174                    android:host="firebase.auth"
-174-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:40:21-49
+174-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:40:21-49
 175                    android:path="/"
-175-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:41:21-37
+175-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:41:21-37
 176                    android:scheme="recaptcha" />
-176-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:42:21-48
+176-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:42:21-48
 177            </intent-filter>
 178        </activity>
 179
 180        <service
-180-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
+180-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
 181            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-181-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:65:13-101
+181-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:65:13-101
 182            android:enabled="true"
-182-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:66:13-35
+182-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:66:13-35
 183            android:exported="false" >
-183-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:67:13-37
+183-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:67:13-37
 184            <intent-filter>
-184-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:68:13-72:29
+184-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:68:13-72:29
 185                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-185-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:17-89
-185-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:25-86
+185-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:17-89
+185-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:25-86
 186
 187                <category android:name="android.intent.category.DEFAULT" />
-187-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
-187-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\18b180a413fb8ebde0ce56e0fd56d9f7\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
+187-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:17-76
+187-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\285a310be1695300bd70a21c798c1ebf\jetified-firebase-auth-20.0.3\AndroidManifest.xml:36:27-73
 188            </intent-filter>
 189        </service>
 190        <!--
@@ -334,124 +334,124 @@
 192             but set to not exported to explicitly avoid allowing another app to call it.
 193        -->
 194        <service
-194-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:28:9-35:19
+194-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:28:9-35:19
 195            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-195-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:29:13-82
+195-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:29:13-82
 196            android:directBootAware="true"
-196-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:30:13-43
+196-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:30:13-43
 197            android:exported="false" >
-197-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\f1322da8c2fba553f50f64429cc0639b\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:31:13-37
+197-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\20da82b9159bf4b298bdb11c49703194\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:31:13-37
 198            <intent-filter android:priority="-500" >
-198-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+198-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
 199                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-199-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
-199-->[:firebase_messaging] D:\AndroidStudioProjects\drowning-detection\pooleye-main\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+199-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+199-->[:firebase_messaging] C:\Users\Eslam\PycharmProjects\drowning-detection\drowning-detection\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
 200            </intent-filter>
 201        </service>
 202
 203        <receiver
-203-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:37:9-44:20
+203-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:37:9-44:20
 204            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-204-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:38:13-78
+204-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:38:13-78
 205            android:exported="true"
-205-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:39:13-36
+205-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:39:13-36
 206            android:permission="com.google.android.c2dm.permission.SEND" >
-206-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:40:13-73
+206-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:40:13-73
 207            <intent-filter>
-207-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:41:13-43:29
+207-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:41:13-43:29
 208                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-208-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:42:17-81
-208-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:42:25-78
+208-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:42:17-81
+208-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\d8956d753a0d07de44f7dd3af634efb3\firebase-iid-21.0.1\AndroidManifest.xml:42:25-78
 209            </intent-filter>
 210        </receiver>
 211
 212        <activity
-212-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+212-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 213            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-213-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+213-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 214            android:exported="false"
-214-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+214-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 215            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-215-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+215-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\97461efba6c5e9e0983cc52e8129f2d5\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 216
 217        <receiver
-217-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:29:9-33:20
+217-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:29:9-33:20
 218            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-218-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:30:13-85
+218-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:30:13-85
 219            android:enabled="true"
-219-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:31:13-35
+219-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:31:13-35
 220            android:exported="false" >
-220-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:32:13-37
+220-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:32:13-37
 221        </receiver>
 222
 223        <service
-223-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:35:9-38:40
+223-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:35:9-38:40
 224            android:name="com.google.android.gms.measurement.AppMeasurementService"
-224-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:36:13-84
+224-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:36:13-84
 225            android:enabled="true"
-225-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:37:13-35
+225-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:37:13-35
 226            android:exported="false" />
-226-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:38:13-37
+226-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:38:13-37
 227        <service
-227-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:39:9-43:72
+227-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:39:9-43:72
 228            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-228-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:40:13-87
+228-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:40:13-87
 229            android:enabled="true"
-229-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:41:13-35
+229-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:41:13-35
 230            android:exported="false"
-230-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:42:13-37
+230-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:42:13-37
 231            android:permission="android.permission.BIND_JOB_SERVICE" />
-231-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:43:13-69
+231-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\de52512b94d8db966fc9fbb4f20eae88\play-services-measurement-18.0.2\AndroidManifest.xml:43:13-69
 232
 233        <provider
-233-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+233-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 234            android:name="com.google.firebase.provider.FirebaseInitProvider"
-234-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+234-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
 235            android:authorities="com.example.pooleye.firebaseinitprovider"
-235-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+235-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
 236            android:directBootAware="true"
-236-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+236-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
 237            android:exported="false"
-237-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+237-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
 238            android:initOrder="100" />
-238-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\0ebcb1f18b7a7f6d2441517d9598b25a\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+238-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\3f5e25f09f711e3b65578719be791bf6\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
 239
 240        <meta-data
-240-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\21ef221641a73a42a66d5d5612e18daf\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+240-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\f99572e0345966d70059c887ab4fb1eb\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
 241            android:name="com.google.android.gms.version"
-241-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\21ef221641a73a42a66d5d5612e18daf\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+241-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\f99572e0345966d70059c887ab4fb1eb\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
 242            android:value="@integer/google_play_services_version" />
-242-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\21ef221641a73a42a66d5d5612e18daf\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+242-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\f99572e0345966d70059c887ab4fb1eb\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
 243
 244        <service
-244-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+244-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
 245            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-245-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+245-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
 246            android:exported="false" >
-246-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+246-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
 247            <meta-data
-247-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+247-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
 248                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-248-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+248-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
 249                android:value="cct" />
-249-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\4976ebfd22abc96e0a5dfcd583609912\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+249-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\23c72b73e1a873dc0b8307648103dd44\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
 250        </service>
 251        <service
-251-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:26:9-30:19
+251-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:26:9-30:19
 252            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-252-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:27:13-117
+252-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:27:13-117
 253            android:exported="false"
-253-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:28:13-37
+253-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:28:13-37
 254            android:permission="android.permission.BIND_JOB_SERVICE" >
-254-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:29:13-69
+254-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:29:13-69
 255        </service>
 256
 257        <receiver
-257-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:32:9-34:40
+257-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:32:9-34:40
 258            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-258-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:33:13-132
+258-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:33:13-132
 259            android:exported="false" />
-259-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Copy Center\.gradle\caches\transforms-2\files-2.1\c8827aa50932237375cb71c86b5d659a\jetified-transport-runtime-2.2.5\AndroidManifest.xml:34:13-37
+259-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Eslam\.gradle\caches\transforms-2\files-2.1\2a3cec909defe96ab8dacf590b79bddd\jetified-transport-runtime-2.2.5\AndroidManifest.xml:34:13-37
 260    </application>
 261
 262</manifest>

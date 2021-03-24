@@ -5,6 +5,7 @@ import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/loginView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgainsationDailyreportView.dart';
+import 'package:pooleye/view/lifeguardNotificationView.dart';
 
 class AuthFormLogin extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class AuthFormLoginState extends State<AuthFormLogin> {
         if (userRole == "lifeguard") {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => lifeguard_notify()),
+            MaterialPageRoute(builder: (context) => BuildList()),
             (Route<dynamic> route) => false, // remove back arrow
           );
         }

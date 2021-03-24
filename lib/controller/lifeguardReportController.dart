@@ -9,7 +9,7 @@ class LifeguardReportController {
   Future<void> fetchLifeguardReports() async {
     await Firebase.initializeApp();
     lifeguardreport = Firestore.instance
-        .collection("lifeguardreports")
+        .collection("lifeguardnotifications")
         .snapshots()
         .map((event) => event.documents
             .map((DocumentSnapshot documentSnapshot) => LifeguardReport(

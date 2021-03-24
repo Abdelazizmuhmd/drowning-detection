@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pooleye/model/notification.dart';
 import 'package:pooleye/view/appMenuView.dart';
 import 'package:pooleye/model/lifeguardReport.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import "package:provider/provider.dart";
 import "package:pooleye/controller/lifeguardReportController.dart";
+import "package:pooleye/controller/lifeguardNotificationController.dart";
 
 class lifeguard_notify extends StatefulWidget {
   @override
@@ -264,8 +266,8 @@ class lifeguard extends State<lifeguard_notify> {
 
   // #docregion _buildSuggestions
   _buildChatList() {
-    List<LifeguardReport> reportList =
-        Provider.of<List<LifeguardReport>>(context);
+    List<LifeguardNotification> reportList =
+        Provider.of<List<LifeguardNotification>>(context);
     return (reportList != null)
         ? Container(
             child: ListView.separated(
@@ -351,12 +353,12 @@ class BuildList extends StatefulWidget {
 }
 
 class _BuildListState extends State<BuildList> {
-  LifeguardReportController LFC = LifeguardReportController();
-  Stream<List<LifeguardReport>> val;
+  LifeguardNotificationController LFN = LifeguardNotificationController();
+  Stream<List<LifeguardNotification>> val;
   @override
   void initState() {
-    LFC.fetchLifeguardReports().then((value) {
-      val = LFC.lifeguardreport;
+    LFN.fetchLifeguardReports().then((value) {
+      val = LFN.lifeguardnotification;
       setState(() {});
     });
     super.initState();
@@ -364,7 +366,7 @@ class _BuildListState extends State<BuildList> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<LifeguardReport>>.value(
+    return StreamProvider<List<LifeguardNotification>>.value(
         value: val, child: lifeguard_notify());
   }
 }

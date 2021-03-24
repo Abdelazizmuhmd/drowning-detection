@@ -28,7 +28,20 @@ packages:
       name: charcode
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.2.0-nullsafety.3"
+||||||| merged common ancestors
+    version: "1.2.0-nullsafety.1"
+=======
+    version: "1.2.0-nullsafety.1"
+  clipboard:
+    dependency: "direct main"
+    description:
+      name: clipboard
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2+8"
+>>>>>>> 1ffeeb16325b405b7c7ec50e646ce929a420415f
   clock:
     dependency: transitive
     description:

@@ -18,26 +18,27 @@ class AuthForm extends StatefulWidget {
 }
 
 class AuthFormState extends State<AuthForm> {
-  final FirebaseMessaging fbm = FirebaseMessaging();
+  //final FirebaseMessaging fbm = FirebaseMessaging();
   final _auth = FirebaseAuth.instance;
   UserCredential userCredential;
   bool _isLoading = false;
   String profileImage = null;
   var rng = new Random();
 
-  FirebaseFirestore db = FirebaseFirestore.instance;
+  //FirebaseFirestore db = FirebaseFirestore.instance;
 
   bool check = true;
+  bool codeCheck = true;
   void _submitAuthForm(String orgainsationName, String role, String email,
       String password, BuildContext ctx,
       [String organisationCode]) async {
     var codeId = rng.nextInt(10000);
     var genrated = DateTime.now().millisecondsSinceEpoch;
+    var fullOrgCode =
+        orgainsationName + codeId.toString() + genrated.toString();
 
     if (role == "organisationManager") {
       await FirebaseFirestore.instance
-          .collection("organisations")
-          .doc(orgainsationName)
           .collection('users')
           .get()
           .then((querySnapshot) {
@@ -64,19 +65,28 @@ class AuthFormState extends State<AuthForm> {
           });
 
           userCredential = await _auth.createUserWithEmailAndPassword(
-              email: email, password: password);
+            email: email,
+            password: password,
+          );
 
           //String fcmToken = await fbm.getToken();
           FirebaseFirestore.instance
-              .collection('organisations')
-              .doc(orgainsationName + codeId.toString() + genrated.toString())
               .collection('users')
               .doc(userCredential.user.uid)
               .set({
             'email': email,
             'orgainsationName': orgainsationName,
+            'organisationCode': fullOrgCode,
             'role': role,
             'profileImage': profileImage,
+          });
+
+          FirebaseFirestore.instance
+              .collection('organisations')
+              .doc(fullOrgCode)
+              .set({
+            'orgCode': fullOrgCode,
+            'orgainsationName': orgainsationName,
           });
 
           // FirebaseFirestore.instance
@@ -130,11 +140,12 @@ class AuthFormState extends State<AuthForm> {
     } else {
       // await FirebaseFirestore.instance
       //     .collection("organisations")
+      //     .doc()
       //     .get()
       //     .then((snapshot) {
-      //   snapshot.docs.forEach((doc) {
-      //     if (organisationCode != doc.id) {
-      //       print("CCCCCCCCCCCCCCCCCCCCCXXXXXXXXXXXXXXAGCgGG");
+      //   snapshot.forEach((doc) {
+      //     print(doc.id);
+      //     if (organisationCode == doc.id) {
       //       return check = false;
       //     }
       //   });
@@ -151,6 +162,17 @@ class AuthFormState extends State<AuthForm> {
 
       await FirebaseFirestore.instance
           .collection("organisations")
+          .get()
+          .then((querySnapshot) {
+        querySnapshot.docs.forEach((result) {
+          if (organisationCode == result["orgCode"]) {
+            return codeCheck = false;
+          }
+        });
+      });
+
+      await FirebaseFirestore.instance
+          .collection("organisations")
           .doc(organisationCode)
           .collection('users')
           .get()
@@ -161,6 +183,17 @@ class AuthFormState extends State<AuthForm> {
           }
         });
       });
+      // if (codeCheck = false) {
+      //   Scaffold.of(ctx).showSnackBar(SnackBar(
+      //     content: Text("Invalid Code"),
+      //     backgroundColor: Theme.of(ctx).errorColor,
+      //   ));
+      //   setState(() {
+      //     _isLoading = false;
+      //     codeCheck = true;
+      //   });
+      // }
+
       if (check == false) {
         Scaffold.of(ctx).showSnackBar(SnackBar(
           content: Text("Email already exists"),
@@ -170,7 +203,16 @@ class AuthFormState extends State<AuthForm> {
           _isLoading = false;
           check = true;
         });
-      } else {
+      }
+
+      if (codeCheck == true) {
+        Scaffold.of(ctx).showSnackBar(SnackBar(
+          content: Text("Invalid Code"),
+          backgroundColor: Theme.of(ctx).errorColor,
+        ));
+      }
+
+      if (check == true && codeCheck == false) {
         try {
           setState(() {
             _isLoading = true;
@@ -181,27 +223,15 @@ class AuthFormState extends State<AuthForm> {
 
           //String fcmToken = await fbm.getToken();
           FirebaseFirestore.instance
-              .collection('organisations')
-              .doc(organisationCode)
               .collection('users')
               .doc(userCredential.user.uid)
               .set({
             'email': email,
             'orgainsationName': orgainsationName,
+            'organisationCode': organisationCode,
             'role': role,
             'profileImage': profileImage,
           });
-
-          // FirebaseFirestore.instance
-          //     .collection('cars')
-          //     .doc(userCredential.user.uid)
-          //     .set({
-          //   'userid': userCredential.user.uid,
-          //   'CarProfileImage': carProfileImage,
-          //   'Location': car_location,
-          //   'SaleStatus': saleStatus,
-          //   'carModel': carModel
-          // });
 
           // var tokens = db
           //     .collection('users')

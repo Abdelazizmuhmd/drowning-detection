@@ -30,6 +30,7 @@ dependencies:
   image_picker:
   firebase_storage:
   path:
+  clipboard: ^0.1.2+8
   flutter:
     sdk: flutter
 

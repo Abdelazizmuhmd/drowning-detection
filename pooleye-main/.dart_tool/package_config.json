@@ -23,7 +23,19 @@
       "name": "charcode",
       "rootUri": "file:///F:/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0-nullsafety.3",
       "packageUri": "lib/",
+<<<<<<< HEAD
       "languageVersion": "2.12"
+||||||| merged common ancestors
+      "languageVersion": "2.10"
+=======
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "clipboard",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard-0.1.2+8",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+>>>>>>> 42ff44c98f5cd02b6737fe726808db7290a9c38e
     },
     {
       "name": "clock",
@@ -398,7 +410,19 @@
       "languageVersion": "2.7"
     }
   ],
+<<<<<<< HEAD
   "generated": "2021-03-24T00:35:15.671963Z",
+||||||| merged common ancestors
+  "generated": "2021-03-20T19:07:09.856938Z",
+=======
+<<<<<<< HEAD
+  "generated": "2021-03-23T23:58:37.546553Z",
+||||||| merged common ancestors
+  "generated": "2021-03-20T19:07:09.856938Z",
+=======
+  "generated": "2021-03-23T20:50:32.546466Z",
+>>>>>>> 1ffeeb16325b405b7c7ec50e646ce929a420415f
+>>>>>>> 42ff44c98f5cd02b6737fe726808db7290a9c38e
   "generator": "pub",
   "generatorVersion": "2.12.0-204.0.dev"
 }

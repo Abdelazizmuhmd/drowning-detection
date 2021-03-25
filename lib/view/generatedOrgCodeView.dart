@@ -12,11 +12,9 @@ class GeneratedCode extends StatefulWidget {
 
 class GeneratedCodeState extends State<GeneratedCode> {
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
+  static GetFirebase orgCode = GetFirebase();
   TextEditingController controller =
-      TextEditingController(text: 'Khalooood3amlEh');
-  String paste = '';
-  String code = "KhaledBashaMasr";
-  Firebase currentUserId = Firebase();
+      TextEditingController(text: orgCode.getOrgCode);
 
   @override
   Widget build(BuildContext context) => Scaffold(

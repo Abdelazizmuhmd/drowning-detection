@@ -19,4 +19,11 @@ class LifeguardNotificationController {
                 sent: documentSnapshot.data()['sent']))
             .toList());
   }
+
+  void updateSent(id) {
+    FirebaseFirestore.instance
+        .collection('lifeguardnotifications')
+        .document(id)
+        .updateData({'sent': true}).catchError((e) {});
+  }
 }

@@ -10,18 +10,23 @@ import "package:pooleye/controller/lifeguardNotificationController.dart";
 
 class lifeguard_notify extends StatefulWidget {
   @override
-  lifeguard createState() => lifeguard();
+  var LFN;
+  lifeguard_notify({this.LFN});
+  lifeguard createState() => lifeguard(LFN: LFN);
 }
 
 class lifeguard extends State<lifeguard_notify> {
+  var LFN;
+  lifeguard({this.LFN});
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
 
   final _formKey = GlobalKey<FormState>();
-  var _commentField = new TextEditingController();
-  var _typeField = new TextEditingController();
+
   LifeguardReportController LFC = LifeguardReportController();
 
-  showReport({String orgId, bool sent}) {
+  showReport({String id, bool sent}) {
+    var _commentField = new TextEditingController();
+    var _typeField = new TextEditingController();
     bool visibe_third_button = false;
     bool visibe_second_button = false;
     bool visibe_first_button = false;
@@ -274,16 +279,17 @@ class lifeguard extends State<lifeguard_notify> {
                             ),
                             RaisedButton(
                               onPressed: () {
-                                print(_typeField.text);
-                                print(type == 'CPR');
                                 // Validate returns true if the form is valid, or false
                                 // otherwise.
                                 if (_formKey.currentState.validate()) {
                                   //If the form is valid, Go to Home screen.
                                   LFC.addLifeguardReport(
                                       type: type,
-                                      id: orgId,
-                                      comment: _commentField.text);
+                                      id: id,
+                                      comment: _commentField.text,
+                                      orgId: 'Ahlyclub49301616522931404');
+                                  LFN.updateSent(id);
+
                                   Navigator.pop(context);
                                 }
                               },
@@ -308,15 +314,17 @@ class lifeguard extends State<lifeguard_notify> {
   // #enddocregion RWS-var
 
   // #docregion _buildSuggestions
-  _buildChatList() {
+  _buildChatList(GlobalKey<ScaffoldState> key) {
     List<LifeguardNotification> notiList = [];
     List<LifeguardNotification> orgList =
         Provider.of<List<LifeguardNotification>>(context);
-    orgList.forEach((element) {
-      if (element.orgId == 'Ahlyclub49301616522931404') {
-        notiList.add(element);
-      }
-    });
+    (orgList != null)
+        ? orgList.forEach((element) {
+            if (element.orgId == 'Ahlyclub49301616522931404') {
+              notiList.add(element);
+            }
+          })
+        : print('test');
 
     return (notiList != null)
         ? Container(
@@ -324,7 +332,7 @@ class lifeguard extends State<lifeguard_notify> {
               padding: const EdgeInsets.all(16.0),
               itemBuilder: /*1*/ (context, i) {
                 return _buildRow(
-                    notiList[i].text, notiList[i].orgId, notiList[i].sent);
+                    notiList[i].text, notiList[i].id, notiList[i].sent, key);
               },
               separatorBuilder: (context, index) {
                 return Divider();
@@ -337,7 +345,7 @@ class lifeguard extends State<lifeguard_notify> {
   // #enddocregion _buildSuggestions
 
   // #docregion _buildRow
-  _buildRow(String name, String orgId, bool sent) {
+  _buildRow(String name, String id, bool sent, GlobalKey<ScaffoldState> key) {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: Colors.white,
@@ -361,18 +369,41 @@ class lifeguard extends State<lifeguard_notify> {
       trailing: IconButton(
         icon: Icon(Icons.send_and_archive),
         onPressed: () {
-          showReport(orgId: orgId, sent: sent);
+          if (!sent) {
+            showReport(id: id, sent: sent);
+          } else {
+            key.currentState
+              ..showSnackBar(SnackBar(
+                content: Text(
+                  'Report already added for this case!',
+                ),
+                duration: Duration(seconds: 2),
+              ));
+          }
         },
       ),
       onTap: () {
-        showReport(orgId: orgId, sent: sent);
+        if (!sent) {
+          showReport(id: id, sent: sent);
+        } else {
+          key.currentState
+            ..showSnackBar(SnackBar(
+              content: Text(
+                'Report already added for this case!',
+              ),
+              duration: Duration(seconds: 2),
+            ));
+        }
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
       drawer: SideDrawer('lifeguard'),
       appBar: AppBar(
         title: Row(
@@ -386,7 +417,7 @@ class lifeguard extends State<lifeguard_notify> {
         ),
         backgroundColor: c1,
       ),
-      body: _buildChatList(),
+      body: _buildChatList(_scaffoldKey),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showReport();
@@ -420,6 +451,6 @@ class _BuildListState extends State<BuildList> {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<LifeguardNotification>>.value(
-        value: val, child: lifeguard_notify());
+        value: val, child: lifeguard_notify(LFN: LFN));
   }
 }

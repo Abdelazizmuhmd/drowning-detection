@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/appMenuView.dart';
+import "package:provider/provider.dart";
+import "package:pooleye/controller/lifeguardReportController.dart";
+import 'package:pooleye/model/lifeguardReport.dart';
+import "package:pooleye/controller/medicalReportController.dart";
+
+import '../controller/medicalReportController.dart';
+import '../controller/medicalReportController.dart';
 
 class medic_notify_page extends StatefulWidget {
   @override
-  medic createState() => medic();
+  var LFC;
+  medic_notify_page({this.LFC});
+  medic createState() => medic(LFC: LFC);
 }
 
 class medic extends State<medic_notify_page> {
+  var LFC;
+  medic({this.LFC});
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
-  //final medic_notify all_notifications = medic_notify();
-  List medicNotify = [
-    'Lifeguard Needs an Ambulance in Swimmimg Pool No.4   "Time:01:33 PM" At Late Stage',
-    'Lifeguard Needs CPR in Swimmimg Pool No.5   "Time:09:57 AM" At Late Stage'
-  ];
-
   final _formKey = GlobalKey<FormState>();
-  var _commentField = new TextEditingController();
 
-  showReport() {
+  MedicReportController MRC = new MedicReportController();
+
+  showReport(String id, String name, String type) {
+    var _commentField = new TextEditingController();
     return showDialog(
         context: context,
         builder: (context) {
@@ -30,7 +37,7 @@ class medic extends State<medic_notify_page> {
                 ),
               ),
               content: Container(
-                height: 250,
+                height: 300,
                 width: 350,
                 child: Expanded(
                   child: Column(
@@ -44,7 +51,7 @@ class medic extends State<medic_notify_page> {
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "Get An Ambulance",
+                            type,
                             style: TextStyle(
                                 color: Colors.red, fontWeight: FontWeight.bold),
                           ),
@@ -61,7 +68,7 @@ class medic extends State<medic_notify_page> {
                             fontSize: 15),
                       ),
                       Text(
-                        "Need an Ambulance Now !",
+                        name,
                         style: TextStyle(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,
@@ -77,9 +84,9 @@ class medic extends State<medic_notify_page> {
                                 TextFormField(
                                   controller: _commentField,
                                   validator: (value) {
-                                    // if (value.isEmpty) {
-                                    //   return 'Please enter Your Password';
-                                    // }
+                                    if (value.isEmpty) {
+                                      return 'Please enter Your comment';
+                                    }
                                     return null;
                                   },
                                   decoration: new InputDecoration(
@@ -93,13 +100,12 @@ class medic extends State<medic_notify_page> {
                                     // Validate returns true if the form is valid, or false
                                     // otherwise.
                                     if (_formKey.currentState.validate()) {
-                                      //If the form is valid, Go to Home screen.
-                                      // Navigator.push(
-                                      //   context,
-                                      //   MaterialPageRoute(
-                                      //       builder: (context) => daily_report()),
-                                      // );
-
+                                      MRC.addMedicReport(
+                                          id: id,
+                                          comment: _commentField.text,
+                                          orgId: 'Ahlyclub49301616522931404');
+                                      LFC.updateSent(id);
+                                      Navigator.pop(context);
                                     }
                                   },
                                   child: Text('Send'),
@@ -125,22 +131,37 @@ class medic extends State<medic_notify_page> {
   // #enddocregion RWS-var
 
   // #docregion _buildSuggestions
-  Widget _buildChatList() {
-    return ListView.separated(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: /*1*/ (context, i) {
-        return _buildRow(medicNotify[i]);
-      },
-      separatorBuilder: (context, index) {
-        return Divider();
-      },
-      itemCount: medicNotify.length,
-    );
+  Widget _buildChatList(GlobalKey<ScaffoldState> key) {
+    List<LifeguardReport> reportList = [];
+    List<LifeguardReport> orgList = Provider.of<List<LifeguardReport>>(context);
+    (orgList != null)
+        ? orgList.forEach((element) {
+            if (element.orgId == 'Ahlyclub49301616522931404') {
+              reportList.add(element);
+            }
+          })
+        : print('test');
+    return (reportList != null)
+        ? Container(
+            child: ListView.separated(
+              padding: const EdgeInsets.all(16.0),
+              itemBuilder: /*1*/ (context, i) {
+                return _buildRow(reportList[i].comment, reportList[i].id,
+                    reportList[i].sent, key, reportList[i].type);
+              },
+              separatorBuilder: (context, index) {
+                return Divider();
+              },
+              itemCount: reportList.length,
+            ),
+          )
+        : Text('Loading');
   }
   // #enddocregion _buildSuggestions
 
   // #docregion _buildRow
-  Widget _buildRow(String name) {
+  Widget _buildRow(String name, String id, bool sent,
+      GlobalKey<ScaffoldState> key, String type) {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: Colors.white,
@@ -167,18 +188,39 @@ class medic extends State<medic_notify_page> {
           color: Colors.redAccent,
         ),
         onPressed: () {
-          showReport();
+          if (!sent) {
+            showReport(id, name, type);
+          } else {
+            key.currentState.showSnackBar(SnackBar(
+              content: Text(
+                'Report already added for this case!',
+              ),
+              duration: Duration(seconds: 2),
+            ));
+          }
         },
       ),
       onTap: () {
-        showReport();
+        if (!sent) {
+          showReport(id, name, type);
+        } else {
+          key.currentState.showSnackBar(SnackBar(
+            content: Text(
+              'Report already added for this case!',
+            ),
+            duration: Duration(seconds: 2),
+          ));
+        }
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
       drawer: SideDrawer('medic'),
       appBar: AppBar(
         title: Row(
@@ -192,7 +234,31 @@ class medic extends State<medic_notify_page> {
         ),
         backgroundColor: c1,
       ),
-      body: _buildChatList(),
+      body: _buildChatList(_scaffoldKey),
     );
+  }
+}
+
+class BuildReportList extends StatefulWidget {
+  @override
+  _BuildReportListState createState() => _BuildReportListState();
+}
+
+class _BuildReportListState extends State<BuildReportList> {
+  LifeguardReportController LFC = LifeguardReportController();
+  Stream<List<LifeguardReport>> val;
+  @override
+  void initState() {
+    LFC.fetchLifeguardReports().then((value) {
+      val = LFC.lifeguardreport;
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamProvider<List<LifeguardReport>>.value(
+        value: val, child: medic_notify_page(LFC: LFC));
   }
 }

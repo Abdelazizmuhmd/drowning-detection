@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:pooleye/services/loginAuth.dart';
 import 'package:pooleye/services/signupAuth.dart';
 import 'package:pooleye/view/SplashScreenView.dart';
+import 'package:pooleye/database/firebase.dart';
+import 'package:pooleye/view/lifeguardNotificationView.dart';
+import 'package:pooleye/view/medicalNotificationView.dart';
+import 'package:pooleye/view/orgainsationDailyreportView.dart';
 
 void main() => runApp(
       MyApp(),
@@ -16,6 +20,8 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //GetFirebase userData = new GetFirebase();
+
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
     return FutureBuilder(
@@ -37,6 +43,19 @@ class MyApp extends StatelessWidget {
                       // if (userSnapshot.hasData) {
                       //   return HomePage('');
                       // }
+                      // if (userSnapshot.hasData &&
+                      //     userData.getRole == "organisationManager") {
+                      //   return daily_report();
+                      // }
+
+                      // if (userSnapshot.hasData &&
+                      //     userData.getRole == "lifeguard") {
+                      //   return BuildList();
+                      // }
+
+                      // if (userSnapshot.hasData && userData.getRole == "medic") {
+                      //   return medic_notify_page();
+
                       return AuthFormLogin();
                     }),
           );

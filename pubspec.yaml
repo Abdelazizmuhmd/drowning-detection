@@ -29,6 +29,7 @@ dependencies:
   cloud_firestore:
   image_picker:
   firebase_storage:
+  intl: ^0.16.1
   path:
   clipboard: ^0.1.2+8
   flutter:

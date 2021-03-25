@@ -14,7 +14,9 @@ class LifeguardNotificationController {
         .map((event) => event.documents
             .map((DocumentSnapshot documentSnapshot) => LifeguardNotification(
                 id: documentSnapshot.documentID,
-                text: documentSnapshot.data()['text']))
+                text: documentSnapshot.data()['text'],
+                orgId: documentSnapshot.data()['orgID'],
+                sent: documentSnapshot.data()['sent']))
             .toList());
   }
 }

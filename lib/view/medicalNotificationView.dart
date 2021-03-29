@@ -7,6 +7,8 @@ import "package:pooleye/controller/medicalReportController.dart";
 
 import '../controller/medicalReportController.dart';
 import '../controller/medicalReportController.dart';
+import "package:pooleye/controller/medicController.dart";
+import "package:pooleye/database/firebase.dart";
 
 class medic_notify_page extends StatefulWidget {
   @override
@@ -16,6 +18,18 @@ class medic_notify_page extends StatefulWidget {
 }
 
 class medic extends State<medic_notify_page> {
+  var medicList;
+  int userIndex;
+  var prog = true;
+  void initState() {
+    Provider.of<Medicprovider>(this.context, listen: false)
+        .fetchdata()
+        .then((value) {
+      prog = false;
+    });
+    super.initState();
+  }
+
   var LFC;
   medic({this.LFC});
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
@@ -103,7 +117,7 @@ class medic extends State<medic_notify_page> {
                                       MRC.addMedicReport(
                                           id: id,
                                           comment: _commentField.text,
-                                          orgId: 'Ahlyclub49301616522931404');
+                                          orgId: medicList[userIndex].orgCode);
                                       LFC.updateSent(id);
                                       Navigator.pop(context);
                                     }
@@ -136,7 +150,7 @@ class medic extends State<medic_notify_page> {
     List<LifeguardReport> orgList = Provider.of<List<LifeguardReport>>(context);
     (orgList != null)
         ? orgList.forEach((element) {
-            if (element.orgId == 'Ahlyclub49301616522931404') {
+            if (element.orgId == medicList[userIndex].orgCode) {
               reportList.add(element);
             }
           })
@@ -219,6 +233,9 @@ class medic extends State<medic_notify_page> {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
+    medicList = Provider.of<Medicprovider>(this.context, listen: true).medic;
+    userIndex = medicList
+        .indexWhere((element) => element.id == GetFirebase().getUserID);
     return Scaffold(
       key: _scaffoldKey,
       drawer: SideDrawer('medic'),
@@ -259,6 +276,9 @@ class _BuildReportListState extends State<BuildReportList> {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<LifeguardReport>>.value(
-        value: val, child: medic_notify_page(LFC: LFC));
+        value: val,
+        child: ChangeNotifierProvider<Medicprovider>(
+            create: (_) => Medicprovider(),
+            child: medic_notify_page(LFC: LFC)));
   }
 }

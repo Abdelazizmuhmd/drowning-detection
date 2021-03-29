@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pooleye/database/firebase.dart';
 import 'package:pooleye/model/notification.dart';
 import 'package:pooleye/view/appMenuView.dart';
 import 'package:pooleye/model/lifeguardReport.dart';
@@ -7,6 +8,8 @@ import 'package:firebase_core/firebase_core.dart';
 import "package:provider/provider.dart";
 import "package:pooleye/controller/lifeguardReportController.dart";
 import "package:pooleye/controller/lifeguardNotificationController.dart";
+import "package:pooleye/controller/lifeguardController.dart";
+import "package:pooleye/database/firebase.dart";
 
 class lifeguard_notify extends StatefulWidget {
   @override
@@ -16,9 +19,21 @@ class lifeguard_notify extends StatefulWidget {
 }
 
 class lifeguard extends State<lifeguard_notify> {
+  var lgList;
+  int userIndex;
+  void initState() {
+    Provider.of<Lifeguardprovider>(this.context, listen: false)
+        .fetchdata()
+        .then((value) {
+      prog = false;
+    });
+    super.initState();
+  }
+
   var LFN;
   lifeguard({this.LFN});
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
+  var prog = true;
 
   final _formKey = GlobalKey<FormState>();
 
@@ -287,7 +302,7 @@ class lifeguard extends State<lifeguard_notify> {
                                       type: type,
                                       id: id,
                                       comment: _commentField.text,
-                                      orgId: 'Ahlyclub49301616522931404');
+                                      orgId: lgList[userIndex].orgCode);
                                   LFN.updateSent(id);
 
                                   Navigator.pop(context);
@@ -320,7 +335,7 @@ class lifeguard extends State<lifeguard_notify> {
         Provider.of<List<LifeguardNotification>>(context);
     (orgList != null)
         ? orgList.forEach((element) {
-            if (element.orgId == 'Ahlyclub49301616522931404') {
+            if (element.orgId == lgList[userIndex].orgCode) {
               notiList.add(element);
             }
           })
@@ -400,32 +415,38 @@ class lifeguard extends State<lifeguard_notify> {
 
   @override
   Widget build(BuildContext context) {
+    lgList =
+        Provider.of<Lifeguardprovider>(this.context, listen: true).lifeguard;
+    userIndex =
+        lgList.indexWhere((element) => element.id == GetFirebase().getUserID);
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
-    return Scaffold(
-      key: _scaffoldKey,
-      drawer: SideDrawer('lifeguard'),
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Text('Lifeguard Notifications '),
-            Icon(
-              Icons.notifications_active_rounded,
-              color: Colors.yellow,
+    return prog
+        ? CircularProgressIndicator()
+        : Scaffold(
+            key: _scaffoldKey,
+            drawer: SideDrawer('lifeguard'),
+            appBar: AppBar(
+              title: Row(
+                children: [
+                  Text('Lifeguard Notifications '),
+                  Icon(
+                    Icons.notifications_active_rounded,
+                    color: Colors.yellow,
+                  ),
+                ],
+              ),
+              backgroundColor: c1,
             ),
-          ],
-        ),
-        backgroundColor: c1,
-      ),
-      body: _buildChatList(_scaffoldKey),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showReport();
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.red,
-      ),
-    );
+            body: _buildChatList(_scaffoldKey),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                showReport();
+              },
+              child: Icon(Icons.add),
+              backgroundColor: Colors.red,
+            ),
+          );
   }
 }
 
@@ -451,6 +472,9 @@ class _BuildListState extends State<BuildList> {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<LifeguardNotification>>.value(
-        value: val, child: lifeguard_notify(LFN: LFN));
+        value: val,
+        child: ChangeNotifierProvider<Lifeguardprovider>(
+            create: (_) => Lifeguardprovider(),
+            child: lifeguard_notify(LFN: LFN)));
   }
 }

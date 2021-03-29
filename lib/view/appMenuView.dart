@@ -171,7 +171,7 @@ class SideDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => medic_notify_page()),
+                  MaterialPageRoute(builder: (context) => BuildReportList()),
                 );
               },
             ),

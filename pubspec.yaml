@@ -32,6 +32,7 @@ dependencies:
   intl: ^0.16.1
   path:
   clipboard: ^0.1.2+8
+  flutter_session: ^0.1.1
   flutter:
     sdk: flutter
 

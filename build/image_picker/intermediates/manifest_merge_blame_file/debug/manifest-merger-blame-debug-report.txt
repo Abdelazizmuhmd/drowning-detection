@@ -3,33 +3,33 @@
 3    package="io.flutter.plugins.imagepicker" >
 4
 5    <uses-sdk android:minSdkVersion="16" />
-5-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml
+5-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml
 6
 7    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-7-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:3:4-78
-7-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:3:21-76
+7-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:3:4-78
+7-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:3:21-76
 8    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-8-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:4:4-79
-8-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:4:21-77
+8-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:4:4-79
+8-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:4:21-77
 9
 10    <application>
-10-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:6:5-16:19
+10-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:6:5-16:19
 11        <provider
-11-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:7:9-15:20
+11-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:7:9-15:20
 12            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-12-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:8:13-82
+12-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:8:13-82
 13            android:authorities="dollar_openBracket_applicationId_closeBracket.flutter.image_provider"
-13-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:9:13-74
+13-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:9:13-74
 14            android:exported="false"
-14-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:10:13-37
+14-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:10:13-37
 15            android:grantUriPermissions="true" >
-15-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:11:13-47
+15-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:11:13-47
 16            <meta-data
-16-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:12:13-14:74
+16-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:12:13-14:74
 17                android:name="android.support.FILE_PROVIDER_PATHS"
-17-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:13:17-67
+17-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:13:17-67
 18                android:resource="@xml/flutter_image_picker_file_paths" />
-18-->F:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:14:17-72
+18-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\image_picker-0.6.7+22\android\src\main\AndroidManifest.xml:14:17-72
 19        </provider>
 20    </application>
 21

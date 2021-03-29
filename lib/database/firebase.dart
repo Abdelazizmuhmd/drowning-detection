@@ -1,35 +1,14 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class GetFirebase {
-  String user = FirebaseAuth.instance.currentUser.uid;
-  String orgCode = "";
-  String role = "";
+  static final GetFirebase _singleton = GetFirebase._internal();
+
+  factory GetFirebase() {
+    return _singleton;
+  }
   String get getUserID {
-    return user;
+    return FirebaseAuth.instance.currentUser.uid;
   }
 
-  String get getOrgCode {
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user)
-        .snapshots()
-        .listen((event) {
-      orgCode = event.get("organisationCode");
-    });
-
-    return orgCode;
-  }
-
-  String get getRole {
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user)
-        .snapshots()
-        .listen((event) {
-      role = event.get("role");
-    });
-
-    return role;
-  }
+  GetFirebase._internal();
 }

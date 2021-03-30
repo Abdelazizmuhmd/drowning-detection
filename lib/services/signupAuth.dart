@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:pooleye/view/appMenuView.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgainsationDailyreportView.dart';
@@ -113,7 +112,8 @@ class AuthFormState extends State<AuthForm> {
 
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => daily_report()),
+            MaterialPageRoute(
+                builder: (context) => BuilddailyReportList('lifeguard')),
             (Route<dynamic> route) => false, // remove back arrow
           );
         } on FirebaseAuthException catch (e) {
@@ -231,6 +231,7 @@ class AuthFormState extends State<AuthForm> {
             'organisationCode': organisationCode,
             'role': role,
             'profileImage': profileImage,
+            'deleted': 0
           });
 
           // var tokens = db
@@ -247,7 +248,7 @@ class AuthFormState extends State<AuthForm> {
           if (role == "lifeguard") {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => lifeguard_notify()),
+              MaterialPageRoute(builder: (context) => BuildList()),
               (Route<dynamic> route) => false, // remove back arrow
             );
           }
@@ -255,7 +256,7 @@ class AuthFormState extends State<AuthForm> {
           if (role == "medic") {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => medic_notify_page()),
+              MaterialPageRoute(builder: (context) => BuildReportList()),
               (Route<dynamic> route) => false, // remove back arrow
             );
           }

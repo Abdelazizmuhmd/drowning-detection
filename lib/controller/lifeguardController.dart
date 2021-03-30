@@ -11,7 +11,8 @@ class Lifeguardprovider with ChangeNotifier {
       var snaps = FirebaseFirestore.instance.collection('users');
       snaps.snapshots().listen((QuerySnapshot querySnapshot) {
         querySnapshot.docs.forEach((document) async {
-          if (document.data()['role'] == "lifeguard") {
+          if (document.data()['role'] == "lifeguard" &&
+              document.data()['deleted'] == 0) {
             lifeguard.add(Lifeguard(
               id: await document.id,
               orgCode: await document.data()['organisationCode'],
@@ -27,5 +28,21 @@ class Lifeguardprovider with ChangeNotifier {
     } catch (error) {
       notifyListeners();
     }
+  }
+
+  Future<void> updateData(String id, val) async {
+    final userIndex = lifeguard.indexWhere((element) => element.id == id);
+    var snaps = FirebaseFirestore.instance
+        .collection('users')
+        .doc(id)
+        .update(val)
+        .catchError((e) {});
+
+    var nMap = Map<String, dynamic>.from(val);
+    print(nMap);
+    for (final key in nMap.keys) {
+      if (key == 'deleted') lifeguard[userIndex].deleted = nMap[key];
+    }
+    notifyListeners();
   }
 }

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/controller/lifeguardController.dart';
-import 'package:pooleye/controller/medicController.dart';
 import 'package:pooleye/controller/organisationManagerController.dart';
 import 'package:pooleye/services/loginAuth.dart';
 import 'package:pooleye/view/OrganizationProfileView.dart';
@@ -10,8 +9,11 @@ import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/lifeguardProfileView.dart';
 import 'package:pooleye/view/medicProfileView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
+import 'package:pooleye/view/orgAccountBottomBar.dart';
 import 'package:pooleye/view/organisationAccountsView.dart';
 import 'package:provider/provider.dart';
+
+import 'orgainsationDailyreportView.dart';
 
 class SideDrawer extends StatelessWidget {
   String router;
@@ -39,7 +41,13 @@ class SideDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.receipt_rounded),
               title: Text('Organisation Daily Reports'),
-              onTap: () => {},
+              onTap: () => {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => BuilddailyReportList('lifeguard')),
+                // )
+              },
             ),
             ListTile(
               leading: Icon(Icons.account_box_rounded),
@@ -48,11 +56,7 @@ class SideDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        ChangeNotifierProvider<Lifeguardprovider>(
-                      create: (_) => Lifeguardprovider(),
-                      child: OrgAccounts(),
-                    ),
+                    builder: (context) => OrgAccountsBar(),
                   ),
                 );
               },

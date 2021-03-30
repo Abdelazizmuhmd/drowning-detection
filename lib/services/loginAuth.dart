@@ -1,12 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_session/flutter_session.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/loginView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgainsationDailyreportView.dart';
-import 'package:pooleye/view/lifeguardNotificationView.dart';
 
 import '../view/medicalNotificationView.dart';
 
@@ -23,6 +21,7 @@ class AuthFormLoginState extends State<AuthFormLogin> {
   UserCredential _authResult;
   bool _isLoading = false;
   var userRole;
+  var deleted;
 
   void _submitAuthForm_signin(
       String email, String password, BuildContext ctx) async {
@@ -44,25 +43,43 @@ class AuthFormLoginState extends State<AuthFormLogin> {
         if (userRole == "organisationManager") {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => daily_report()),
+            MaterialPageRoute(
+                builder: (context) => BuilddailyReportList('lifeguard')),
             (Route<dynamic> route) => false, // remove back arrow
           );
         }
+        deleted = event.get("deleted");
 
-        if (userRole == "lifeguard") {
+        if (userRole == "lifeguard" && deleted == 0) {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => BuildList()),
             (Route<dynamic> route) => false, // remove back arrow
           );
+        } else {
+          Scaffold.of(ctx).showSnackBar(SnackBar(
+            content: Text("Not Found Account"),
+            backgroundColor: Theme.of(ctx).errorColor,
+          ));
+          setState(() {
+            _isLoading = false;
+          });
         }
 
-        if (userRole == "medic") {
+        if (userRole == "medic" && deleted == 0) {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => BuildReportList()),
             (Route<dynamic> route) => false, // remove back arrow
           );
+        } else {
+          Scaffold.of(ctx).showSnackBar(SnackBar(
+            content: Text("Not Found Account"),
+            backgroundColor: Theme.of(ctx).errorColor,
+          ));
+          setState(() {
+            _isLoading = false;
+          });
         }
       });
     } on FirebaseAuthException catch (e) {

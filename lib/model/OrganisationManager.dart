@@ -4,6 +4,7 @@ class OrganisationManager extends User {
   String id;
   String orgCode;
   String role;
+
   OrganisationManager({this.id, this.orgCode, this.role});
   String get getorgCode {
     return orgCode;

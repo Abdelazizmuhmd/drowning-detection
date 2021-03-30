@@ -2,12 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/services/loginAuth.dart';
-import 'package:pooleye/services/signupAuth.dart';
 import 'package:pooleye/view/SplashScreenView.dart';
-import 'package:pooleye/database/firebase.dart';
-import 'package:pooleye/view/lifeguardNotificationView.dart';
-import 'package:pooleye/view/medicalNotificationView.dart';
-import 'package:pooleye/view/orgainsationDailyreportView.dart';
 
 void main() => runApp(
       MyApp(),

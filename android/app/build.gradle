@@ -24,8 +24,13 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+<<<<<<< HEAD
 apply plugin: 'com.google.gms.google-services'
 
+||||||| merged common ancestors
+=======
+apply plugin: 'com.google.gms.google-services'
+>>>>>>> ed5f2e9292e40062321417bbaaa0604fb184ffbb
 
 android {
     compileSdkVersion 29
@@ -41,10 +46,17 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.pooleye"
+<<<<<<< HEAD
         minSdkVersion 23
+||||||| merged common ancestors
+        minSdkVersion 16
+=======
+        minSdkVersion 21
+>>>>>>> ed5f2e9292e40062321417bbaaa0604fb184ffbb
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        
     }
 
     buildTypes {
@@ -62,4 +74,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    
 }

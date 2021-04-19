@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751228361196",
+    "project_id": "pooleye-68d49",
+    "storage_bucket": "pooleye-68d49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751228361196:android:9d881064b9669340c008c9",
+        "android_client_info": {
+          "package_name": "com.example.pooleye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751228361196-cvunbvnfnttebk7s0md065fqa3781f18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv_LgstsyaDM9iGzbeIctjf7eDS8-EekI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751228361196-cvunbvnfnttebk7s0md065fqa3781f18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

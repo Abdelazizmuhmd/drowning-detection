@@ -12,6 +12,8 @@ import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgAccountBottomBar.dart';
 import 'package:pooleye/view/organisationAccountsView.dart';
 import 'package:provider/provider.dart';
+import 'package:pooleye/controller/lifeguardController.dart';
+import 'package:pooleye/view/lifeguardProfileView.dart';
 
 import 'orgainsationDailyreportView.dart';
 
@@ -132,9 +134,12 @@ class SideDrawer extends StatelessWidget {
               title: Text('Lifeguard Profile'),
               onTap: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => lifeguardProfile()),
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ChangeNotifierProvider<Lifeguardprovider>(
+                                create: (_) => Lifeguardprovider(),
+                                child: lifeguardProfile())));
               },
             ),
             ListTile(

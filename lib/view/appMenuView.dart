@@ -2,31 +2,55 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/controller/lifeguardController.dart';
 import 'package:pooleye/controller/organizationManagerController.dart';
+import 'package:pooleye/model/lifeguard.dart';
 import 'package:pooleye/services/loginAuth.dart';
-import 'package:pooleye/view/OrganizationProfileView.dart';
 import 'package:pooleye/view/generatedOrgCodeView.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/lifeguardProfileView.dart';
-import 'package:pooleye/view/medicProfileView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgAccountBottomBar.dart';
-import 'package:pooleye/view/organisationAccountsView.dart';
 import 'package:provider/provider.dart';
-import 'package:pooleye/controller/lifeguardController.dart';
-import 'package:pooleye/view/lifeguardProfileView.dart';
 import 'package:pooleye/controller/medicController.dart';
-import 'orgainsationDailyreportView.dart';
 
-class SideDrawer extends StatelessWidget {
+class SideDrawer extends StatefulWidget {
+  @override
   String router;
   SideDrawer(this.router);
 
+  _SideDrawerState createState() => _SideDrawerState(this.router);
+}
+
+class _SideDrawerState extends State<SideDrawer> {
+  String router;
+  _SideDrawerState(this.router);
+  Lifeguard passNotification = Lifeguard();
   @override
   Color c2 = const Color.fromRGBO(110, 204, 234, 1.0);
+  bool isSwitched = false;
+  var textValue = 'Switch is OFF';
+  void toggleSwitch(bool value) {
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+        textValue = 'Switch Button is ON';
+        //passNotification.update("1");
+      });
+      print('Switch Button is ON');
+    } else {
+      setState(() {
+        isSwitched = false;
+        textValue = 'Switch Button is OFF';
+        //passNotification.update("0");
+      });
+      print('Switch Button is OFF');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     if (router == 'organisationManager') {
       return Drawer(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             DrawerHeader(
               child: Center(
@@ -108,7 +132,7 @@ class SideDrawer extends StatelessWidget {
 
     if (router == 'lifeguard') {
       return Drawer(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             DrawerHeader(
               child: Center(
@@ -146,7 +170,26 @@ class SideDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-                leading: Icon(Icons.exit_to_app),
+              leading: Icon(
+                Icons.notifications,
+              ),
+              title: Row(children: <Widget>[
+                Text('Notifications'),
+                Switch(
+                  onChanged: toggleSwitch,
+                  value: isSwitched,
+                  activeColor: Colors.blue,
+                  activeTrackColor: Colors.grey,
+                  inactiveThumbColor: Colors.redAccent,
+                  inactiveTrackColor: Colors.grey,
+                ),
+              ]),
+              onTap: () {},
+            ),
+            ListTile(
+                leading: Icon(
+                  Icons.exit_to_app,
+                ),
                 title: Text('Logout'),
                 onTap: () {
                   FirebaseAuth.instance.signOut();
@@ -163,7 +206,7 @@ class SideDrawer extends StatelessWidget {
 
     if (router == 'medic') {
       return Drawer(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             DrawerHeader(
               child: Center(

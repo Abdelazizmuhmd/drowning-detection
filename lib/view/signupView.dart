@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:pooleye/view/loginView.dart';
 
 class Signup extends StatefulWidget {
-  final void Function(String orgainsationName, String role, String email,
-      String password, BuildContext ctx, String organisationCode) submitFn;
+  final void Function(
+      String orgainsationName,
+      String role,
+      String email,
+      String password,
+      BuildContext ctx,
+      String organisationCode,
+      String username) submitFn;
   final bool _isLoading;
   Signup(this.submitFn, this._isLoading);
   @override
@@ -22,6 +28,8 @@ class SignupState extends State<Signup> {
   String role = "organisationManager";
   var _password = new TextEditingController();
   var orgId = new TextEditingController();
+
+  var employeesUsername = new TextEditingController();
 
   static final validCharacters = RegExp(r"^[a-zA-Z]+$");
   bool visible_manager = true;
@@ -204,29 +212,62 @@ class SignupState extends State<Signup> {
                     ),
                     Visibility(
                       visible: visible_others,
-                      child: TextFormField(
-                        controller: orgId,
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Please Enter The Organisation ID';
-                          }
-                          if (value.length < 3) {
-                            return 'Organisation ID is too short';
-                          }
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: employeesUsername,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please Enter Username';
+                              }
+                              if (value.length < 3) {
+                                return 'Username is too short';
+                              }
 
-                          if (value.length > 35) {
-                            return 'Organisation ID is too long';
-                          }
-                          return null;
-                        },
-                        decoration: new InputDecoration(
-                            hintText: 'Organisation ID',
-                            border: const OutlineInputBorder(),
-                            icon: new Icon(
-                              Icons.ad_units,
-                              color: Colors.blueGrey,
-                              size: 30.0,
-                            )),
+                              if (value.length > 18) {
+                                return 'Username is too long';
+                              }
+
+                              if (!validCharacters.hasMatch(value)) {
+                                return 'Username should be alphabets only';
+                              }
+                              return null;
+                            },
+                            decoration: new InputDecoration(
+                                hintText: 'Username',
+                                border: const OutlineInputBorder(),
+                                icon: new Icon(
+                                  Icons.person,
+                                  color: Colors.blueGrey,
+                                  size: 30.0,
+                                )),
+                          ),
+                          new Padding(padding: new EdgeInsets.all(20.0)),
+                          TextFormField(
+                            controller: orgId,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please Enter The Organisation ID';
+                              }
+                              if (value.length < 3) {
+                                return 'Organisation ID is too short';
+                              }
+
+                              if (value.length > 35) {
+                                return 'Organisation ID is too long';
+                              }
+                              return null;
+                            },
+                            decoration: new InputDecoration(
+                                hintText: 'Organisation ID',
+                                border: const OutlineInputBorder(),
+                                icon: new Icon(
+                                  Icons.ad_units,
+                                  color: Colors.blueGrey,
+                                  size: 30.0,
+                                )),
+                          ),
+                        ],
                       ),
                     ),
                     // new Padding(padding: new EdgeInsets.all(20.0)),
@@ -278,6 +319,7 @@ class SignupState extends State<Signup> {
                                         _password.text.trim(),
                                         context,
                                         orgId.text.trim(),
+                                        employeesUsername.text.trim(),
                                       );
                                     }
                                   },

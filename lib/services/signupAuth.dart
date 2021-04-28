@@ -127,6 +127,7 @@ class AuthFormState extends State<AuthForm> {
             'profileImage': profileImage,
             'deleted': 0,
             'username': username,
+            'subscriber': true
           });
 
           if (role == "lifeguard") {

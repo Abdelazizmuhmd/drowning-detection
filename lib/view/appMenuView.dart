@@ -26,8 +26,8 @@ class _SideDrawerState extends State<SideDrawer> {
   Lifeguard passNotification = Lifeguard();
   @override
   Color c2 = const Color.fromRGBO(110, 204, 234, 1.0);
-  bool isSwitched = false;
-  var textValue = 'Switch is OFF';
+  bool isSwitched = true;
+  var textValue = 'Switch is ON';
   void toggleSwitch(bool value) {
     if (isSwitched == false) {
       setState(() {
@@ -242,6 +242,23 @@ class _SideDrawerState extends State<SideDrawer> {
                                 create: (_) => Medicprovider(),
                                 child: lifeguardProfile("medic"))));
               },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.notifications,
+              ),
+              title: Row(children: <Widget>[
+                Text('Notifications'),
+                Switch(
+                  onChanged: toggleSwitch,
+                  value: isSwitched,
+                  activeColor: Colors.blue,
+                  activeTrackColor: Colors.grey,
+                  inactiveThumbColor: Colors.redAccent,
+                  inactiveTrackColor: Colors.grey,
+                ),
+              ]),
+              onTap: () {},
             ),
             ListTile(
                 leading: Icon(Icons.exit_to_app),

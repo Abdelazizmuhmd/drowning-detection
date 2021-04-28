@@ -29,8 +29,4 @@ class Medic extends User {
   String get getemail {
     return email;
   }
-
-  String update() {
-    return "";
-  }
 }

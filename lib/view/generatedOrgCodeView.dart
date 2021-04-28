@@ -1,7 +1,7 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pooleye/controller/organisationManagerController.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 import 'package:pooleye/database/firebase.dart';
 import 'package:pooleye/model/OrganisationManager.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +23,7 @@ class GeneratedCodeState extends State<GeneratedCode> {
   int userIndex;
   @override
   void initState() {
-    Provider.of<OrganisationMangerprovider>(this.context, listen: false)
+    Provider.of<OrganizationMangerprovider>(this.context, listen: false)
         .fetchdata()
         .then((value) {
       prog = false;
@@ -38,7 +38,7 @@ class GeneratedCodeState extends State<GeneratedCode> {
           orgmanagers.indexWhere((element) => element.id == orgCode.getUserID);
     }
     orgmanagers =
-        Provider.of<OrganisationMangerprovider>(this.context, listen: true)
+        Provider.of<OrganizationMangerprovider>(this.context, listen: true)
             .orgManagers;
     return Scaffold(
       appBar: AppBar(

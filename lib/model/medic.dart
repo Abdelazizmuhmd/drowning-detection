@@ -6,7 +6,14 @@ class Medic extends User {
   String role;
   String email;
   int deleted;
-  Medic({this.id, this.orgCode, this.role, this.email, this.deleted});
+  String username;
+  Medic(
+      {this.id,
+      this.orgCode,
+      this.role,
+      this.email,
+      this.deleted,
+      this.username});
   String get getorgCode {
     return orgCode;
   }

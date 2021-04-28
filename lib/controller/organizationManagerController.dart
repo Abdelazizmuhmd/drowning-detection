@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pooleye/model/OrganisationManager.dart';
 
-class OrganisationMangerprovider with ChangeNotifier {
+class OrganizationMangerprovider with ChangeNotifier {
   List<OrganisationManager> orgManagers = [];
   Future<void> fetchdata() async {
     await Firebase.initializeApp();
@@ -14,8 +14,10 @@ class OrganisationMangerprovider with ChangeNotifier {
           if (document.data()['role'] == "organisationManager") {
             orgManagers.add(OrganisationManager(
               id: await document.id,
-              orgCode: await document.data()['organisationCode'],
+              orgCode: await document.data()['orgCode'],
               role: await document.data()['role'],
+              email: await document.data()['email'],
+              orgName: await document.data()['orgainsationName'],
             ));
           }
         });

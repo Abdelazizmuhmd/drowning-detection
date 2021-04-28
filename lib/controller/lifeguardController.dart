@@ -15,9 +15,10 @@ class Lifeguardprovider with ChangeNotifier {
               document.data()['deleted'] == 0) {
             lifeguard.add(Lifeguard(
               id: await document.id,
-              orgCode: await document.data()['organisationCode'],
+              orgCode: await document.data()['orgCode'],
               role: await document.data()['role'],
               email: await document.data()['email'],
+              username: await document.data()['username'],
             ));
           }
         });

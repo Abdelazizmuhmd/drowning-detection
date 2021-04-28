@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/controller/lifeguardController.dart';
-import 'package:pooleye/controller/organisationManagerController.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 import 'package:pooleye/services/loginAuth.dart';
 import 'package:pooleye/view/OrganizationProfileView.dart';
 import 'package:pooleye/view/generatedOrgCodeView.dart';
@@ -14,7 +14,7 @@ import 'package:pooleye/view/organisationAccountsView.dart';
 import 'package:provider/provider.dart';
 import 'package:pooleye/controller/lifeguardController.dart';
 import 'package:pooleye/view/lifeguardProfileView.dart';
-
+import 'package:pooleye/controller/medicController.dart';
 import 'orgainsationDailyreportView.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -68,9 +68,12 @@ class SideDrawer extends StatelessWidget {
               title: Text('Organisation Profile'),
               onTap: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => OrgProfile()),
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ChangeNotifierProvider<OrganizationMangerprovider>(
+                                create: (_) => OrganizationMangerprovider(),
+                                child: lifeguardProfile("org"))));
               },
             ),
             ListTile(
@@ -81,8 +84,8 @@ class SideDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          ChangeNotifierProvider<OrganisationMangerprovider>(
-                              create: (_) => OrganisationMangerprovider(),
+                          ChangeNotifierProvider<OrganizationMangerprovider>(
+                              create: (_) => OrganizationMangerprovider(),
                               child: GeneratedCode())),
                 );
               },
@@ -139,7 +142,7 @@ class SideDrawer extends StatelessWidget {
                         builder: (context) =>
                             ChangeNotifierProvider<Lifeguardprovider>(
                                 create: (_) => Lifeguardprovider(),
-                                child: lifeguardProfile())));
+                                child: lifeguardProfile("lifeguard"))));
               },
             ),
             ListTile(
@@ -189,9 +192,12 @@ class SideDrawer extends StatelessWidget {
               title: Text('Medic Profile'),
               onTap: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => medicProfile()),
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ChangeNotifierProvider<Medicprovider>(
+                                create: (_) => Medicprovider(),
+                                child: lifeguardProfile("medic"))));
               },
             ),
             ListTile(

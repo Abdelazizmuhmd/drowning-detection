@@ -11,13 +11,19 @@ import "package:provider/provider.dart";
 import 'package:pooleye/controller/lifeguardController.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pooleye/controller/medicController.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 
 class lifeguardProfile extends StatefulWidget {
   static Pattern pattern;
-  _lifeguardProfile createState() => _lifeguardProfile();
+  final String type;
+  _lifeguardProfile createState() => _lifeguardProfile(type);
+  lifeguardProfile(this.type);
 }
 
 class _lifeguardProfile extends State<lifeguardProfile> {
+  final String accType;
+  _lifeguardProfile(this.accType);
   GetFirebase fb = GetFirebase();
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
   TextFormField test;
@@ -43,12 +49,26 @@ class _lifeguardProfile extends State<lifeguardProfile> {
 
   @override
   void initState() {
-    Provider.of<Lifeguardprovider>(this.context, listen: false)
-        .fetchdata()
-        .then((value) {
-      prog = false;
-    });
-    update = Provider.of<Lifeguardprovider>(this.context, listen: false);
+    if (accType == 'lifeguard') {
+      Provider.of<Lifeguardprovider>(this.context, listen: false)
+          .fetchdata()
+          .then((value) {
+        prog = false;
+      });
+    } else if (accType == 'medic') {
+      Provider.of<Medicprovider>(this.context, listen: false)
+          .fetchdata()
+          .then((value) {
+        prog = false;
+      });
+    } else if (accType == 'org') {
+      Provider.of<OrganizationMangerprovider>(this.context, listen: false)
+          .fetchdata()
+          .then((value) {
+        prog = false;
+      });
+    }
+    //update = Provider.of<Lifeguardprovider>(this.context, listen: false);
     var uPic;
     uPic = GetFirebase().getUserID;
     try {
@@ -203,10 +223,22 @@ class _lifeguardProfile extends State<lifeguardProfile> {
         err = true;
       }
     }
-    userList =
-        Provider.of<Lifeguardprovider>(this.context, listen: true).lifeguard;
-    user_id = GetFirebase().getUserID;
-    userIndex = userList.indexWhere((element) => element.id == user_id);
+    if (accType == "lifeguard") {
+      userList =
+          Provider.of<Lifeguardprovider>(this.context, listen: true).lifeguard;
+      user_id = GetFirebase().getUserID;
+      userIndex = userList.indexWhere((element) => element.id == user_id);
+    } else if (accType == "medic") {
+      userList = Provider.of<Medicprovider>(this.context, listen: true).medic;
+      user_id = GetFirebase().getUserID;
+      userIndex = userList.indexWhere((element) => element.id == user_id);
+    } else if (accType == "org") {
+      userList =
+          Provider.of<OrganizationMangerprovider>(this.context, listen: true)
+              .orgManagers;
+      user_id = GetFirebase().getUserID;
+      userIndex = userList.indexWhere((element) => element.id == user_id);
+    }
     return err
         ? WillPopScope(
             onWillPop: () async {
@@ -238,7 +270,7 @@ class _lifeguardProfile extends State<lifeguardProfile> {
             child: Scaffold(
               resizeToAvoidBottomInset: false,
               appBar: new AppBar(
-                title: Text("lifeguard Profile"),
+                title: Text("Profile"),
                 leading: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -324,7 +356,15 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             //Text('Name'),
-                            textfield(hintText: 'Gabriel', type: "Name"),
+                            textfield(
+                                hintText: userList[userIndex].role ==
+                                        'organisationManager'
+                                    ? userList[userIndex].orgName
+                                    : userList[userIndex].username,
+                                type: userList[userIndex].role ==
+                                        'organisationManager'
+                                    ? "Organization Name"
+                                    : "Name"),
                             textfield(
                                 hintText: userList[userIndex].email,
                                 type: "Email"),

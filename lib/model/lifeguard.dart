@@ -6,7 +6,14 @@ class Lifeguard extends User {
   String role;
   String email;
   int deleted;
-  Lifeguard({this.id, this.orgCode, this.role, this.email, this.deleted});
+  String username;
+  Lifeguard(
+      {this.id,
+      this.orgCode,
+      this.role,
+      this.email,
+      this.deleted,
+      this.username});
   String get getorgCode {
     return orgCode;
   }

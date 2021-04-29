@@ -40,9 +40,9 @@ class Lifeguardprovider with ChangeNotifier {
         .catchError((e) {});
 
     var nMap = Map<String, dynamic>.from(val);
-    print(nMap);
     for (final key in nMap.keys) {
       if (key == 'deleted') lifeguard[userIndex].deleted = nMap[key];
+      if (key == 'username') lifeguard[userIndex].username = nMap[key];
     }
     notifyListeners();
   }

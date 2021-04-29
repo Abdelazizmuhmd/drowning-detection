@@ -27,7 +27,7 @@ class _lifeguardProfile extends State<lifeguardProfile> {
   GetFirebase fb = GetFirebase();
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
   TextFormField test;
-  static final validCharacters = RegExp(r"^[a-zA-Z]+$");
+  static final validCharacters = RegExp(r"^(?:.*[a-zA-Z].*){3}");
   final _formKey = GlobalKey<FormState>();
   TextEditingController _customController;
   //Userprovider userOn = new Userprovider();
@@ -55,18 +55,22 @@ class _lifeguardProfile extends State<lifeguardProfile> {
           .then((value) {
         prog = false;
       });
+      update = Provider.of<Lifeguardprovider>(this.context, listen: false);
     } else if (accType == 'medic') {
       Provider.of<Medicprovider>(this.context, listen: false)
           .fetchdata()
           .then((value) {
         prog = false;
       });
+      update = Provider.of<Medicprovider>(this.context, listen: false);
     } else if (accType == 'org') {
       Provider.of<OrganizationMangerprovider>(this.context, listen: false)
           .fetchdata()
           .then((value) {
         prog = false;
       });
+      update =
+          Provider.of<OrganizationMangerprovider>(this.context, listen: false);
     }
     //update = Provider.of<Lifeguardprovider>(this.context, listen: false);
     var uPic;
@@ -97,54 +101,48 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                 width: 550,
                 child: Form(
                   key: _formKey,
-                  child: type == "No."
-                      ? Column(
-                          children: [
-                            MaterialButton(
-                              elevation: 5.0,
-                              child: Text('Submit'),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  // If the form is valid, Go to Home screen.
-                                }
-                              },
-                            ),
-                          ],
-                        )
-                      : Column(
-                          children: [
-                            TextFormField(
-                              validator: (value) {
-                                if (type == "Password") {
-                                  if (value.isEmpty) {
-                                    return 'Please Enter Last Name';
-                                  }
-                                  if (value.length < 3) {
-                                    return 'Last Name is too short';
-                                  }
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        validator: (value) {
+                          if (type == "Name" || type == "Organization Name") {
+                            if (value.isEmpty) {
+                              return 'Please Enter Name';
+                            }
+                            if (value.length < 3) {
+                              return 'Name is too short';
+                            }
 
-                                  if (value.length > 18) {
-                                    return 'Last Name is too long';
-                                  }
-                                  if (!validCharacters.hasMatch(value)) {
-                                    return 'Last Name should be alphabets only';
-                                  }
-                                  return null;
-                                }
-                              },
-                              controller: _customController,
-                            ),
-                            MaterialButton(
-                              elevation: 5.0,
-                              child: Text('Submit'),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  // If the form is valid, Go to Home screen.
-                                }
-                              },
-                            )
-                          ],
-                        ),
+                            if (value.length > 18) {
+                              return 'Name is too long';
+                            }
+                            if (!validCharacters.hasMatch(value)) {
+                              return 'Name should contain at least 3 letters';
+                            }
+                            return null;
+                          }
+                        },
+                        controller: _customController,
+                      ),
+                      MaterialButton(
+                        elevation: 5.0,
+                        child: Text('Submit'),
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            update.updateData(
+                                user_id,
+                                accType == 'org'
+                                    ? {
+                                        'orgainsationName':
+                                            _customController.text
+                                      }
+                                    : {'username': _customController.text});
+                            Navigator.pop(context);
+                          }
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
             );

@@ -237,6 +237,18 @@ class _lifeguardProfile extends State<lifeguardProfile> {
       user_id = GetFirebase().getUserID;
       userIndex = userList.indexWhere((element) => element.id == user_id);
     }
+    Future getImage() async {
+      var image = await ImagePicker.pickImage(
+          source: ImageSource.gallery, maxWidth: 600);
+      setState(() {
+        uImage = image;
+      });
+      String filename = "useraaa" + user_id + '.png';
+      _imageUrl = '';
+      var firebaseStorageRef = GetFirebase().fbStorage.child(filename);
+      var uploadTask = firebaseStorageRef.putFile(uImage).then((loc) {});
+    }
+
     return err
         ? WillPopScope(
             onWillPop: () async {
@@ -322,7 +334,9 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                                           Icons.edit,
                                           color: Colors.white,
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          getImage();
+                                        },
                                       ),
                                     ),
                                   ),

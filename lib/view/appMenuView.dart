@@ -97,7 +97,7 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<OrganizationMangerprovider>(
                                 create: (_) => OrganizationMangerprovider(),
-                                child: lifeguardProfile("org"))));
+                                child: Profile("org"))));
               },
             ),
             ListTile(
@@ -166,7 +166,7 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<Lifeguardprovider>(
                                 create: (_) => Lifeguardprovider(),
-                                child: lifeguardProfile("lifeguard"))));
+                                child: Profile("lifeguard"))));
               },
             ),
             ListTile(
@@ -240,7 +240,7 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<Medicprovider>(
                                 create: (_) => Medicprovider(),
-                                child: lifeguardProfile("medic"))));
+                                child: Profile("medic"))));
               },
             ),
             ListTile(

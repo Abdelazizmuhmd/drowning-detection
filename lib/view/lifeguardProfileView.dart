@@ -13,17 +13,18 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pooleye/controller/medicController.dart';
 import 'package:pooleye/controller/organizationManagerController.dart';
+import 'package:pooleye/services/loginAuth.dart';
 
-class lifeguardProfile extends StatefulWidget {
+class Profile extends StatefulWidget {
   static Pattern pattern;
   final String type;
-  _lifeguardProfile createState() => _lifeguardProfile(type);
-  lifeguardProfile(this.type);
+  _Profile createState() => _Profile(type);
+  Profile(this.type);
 }
 
-class _lifeguardProfile extends State<lifeguardProfile> {
+class _Profile extends State<Profile> {
   final String accType;
-  _lifeguardProfile(this.accType);
+  _Profile(this.accType);
   GetFirebase fb = GetFirebase();
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
   TextFormField test;
@@ -200,9 +201,16 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                               ? Container()
                               : Icon(Icons.edit),
                       onPressed: () {
-                        if (type == "Logout")
-                          print("logout");
-                        else
+                        if (type == "Logout") {
+                          GetFirebase().auth.signOut();
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AuthFormLogin()),
+                            (Route<dynamic> route) =>
+                                false, // remove back arrow
+                          );
+                        } else
                           createAlertDialog(context, type, hintText);
                       },
                     ),
@@ -243,7 +251,7 @@ class _lifeguardProfile extends State<lifeguardProfile> {
       setState(() {
         uImage = image;
       });
-      String filename = "useraaa" + user_id + '.png';
+      String filename = "user" + user_id + '.png';
       _imageUrl = '';
       var firebaseStorageRef = GetFirebase().fbStorage.child(filename);
       var uploadTask = firebaseStorageRef.putFile(uImage).then((loc) {});

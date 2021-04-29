@@ -21,5 +21,9 @@ class GetFirebase {
     return firebaseStorageRef;
   }
 
+  get auth {
+    return FirebaseAuth.instance;
+  }
+
   GetFirebase._internal();
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/loginView.dart';
 
@@ -28,6 +29,7 @@ class SignupState extends State<Signup> {
   String role = "organisationManager";
   var _password = new TextEditingController();
   var orgId = new TextEditingController();
+FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
 
   var employeesUsername = new TextEditingController();
 
@@ -320,8 +322,13 @@ class SignupState extends State<Signup> {
                                         context,
                                         orgId.text.trim(),
                                         employeesUsername.text.trim(),
+                                        
                                       );
+                                          firebaseMessaging.subscribeToTopic(orgId.text.trim()+role);
+                                          print(orgId.text.trim()+role);
+
                                     }
+                                
                                   },
                                   child: Text('Sign Up'),
                                   color: Colors.cyan,

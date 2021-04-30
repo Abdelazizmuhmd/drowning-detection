@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
@@ -20,6 +21,7 @@ class AuthFormState extends State<AuthForm> {
   bool _isLoading = false;
   String profileImage = null;
   var rng = new Random();
+FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
 
   bool codeCheck = true;
   bool usernameCheck = true;
@@ -52,6 +54,9 @@ class AuthFormState extends State<AuthForm> {
           'role': role,
           'profileImage': profileImage,
         });
+    firebaseMessaging.subscribeToTopic(fullOrgCode+role);
+    print(fullOrgCode+role);
+
 
         FirebaseFirestore.instance
             .collection('organisations')

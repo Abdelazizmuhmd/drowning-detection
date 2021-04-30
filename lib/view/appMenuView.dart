@@ -170,23 +170,6 @@ class _SideDrawerState extends State<SideDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.notifications,
-              ),
-              title: Row(children: <Widget>[
-                Text('Notifications'),
-                Switch(
-                  onChanged: toggleSwitch,
-                  value: isSwitched,
-                  activeColor: Colors.blue,
-                  activeTrackColor: Colors.grey,
-                  inactiveThumbColor: Colors.redAccent,
-                  inactiveTrackColor: Colors.grey,
-                ),
-              ]),
-              onTap: () {},
-            ),
-            ListTile(
                 leading: Icon(
                   Icons.exit_to_app,
                 ),
@@ -242,23 +225,6 @@ class _SideDrawerState extends State<SideDrawer> {
                                 create: (_) => Medicprovider(),
                                 child: Profile("medic"))));
               },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.notifications,
-              ),
-              title: Row(children: <Widget>[
-                Text('Notifications'),
-                Switch(
-                  onChanged: toggleSwitch,
-                  value: isSwitched,
-                  activeColor: Colors.blue,
-                  activeTrackColor: Colors.grey,
-                  inactiveThumbColor: Colors.redAccent,
-                  inactiveTrackColor: Colors.grey,
-                ),
-              ]),
-              onTap: () {},
             ),
             ListTile(
                 leading: Icon(Icons.exit_to_app),

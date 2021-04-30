@@ -97,7 +97,7 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<OrganizationMangerprovider>(
                                 create: (_) => OrganizationMangerprovider(),
-                                child: lifeguardProfile("org"))));
+                                child: Profile("org"))));
               },
             ),
             ListTile(
@@ -166,25 +166,8 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<Lifeguardprovider>(
                                 create: (_) => Lifeguardprovider(),
-                                child: lifeguardProfile("lifeguard"))));
+                                child: Profile("lifeguard"))));
               },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.notifications,
-              ),
-              title: Row(children: <Widget>[
-                Text('Notifications'),
-                Switch(
-                  onChanged: toggleSwitch,
-                  value: isSwitched,
-                  activeColor: Colors.blue,
-                  activeTrackColor: Colors.grey,
-                  inactiveThumbColor: Colors.redAccent,
-                  inactiveTrackColor: Colors.grey,
-                ),
-              ]),
-              onTap: () {},
             ),
             ListTile(
                 leading: Icon(
@@ -240,25 +223,8 @@ class _SideDrawerState extends State<SideDrawer> {
                         builder: (context) =>
                             ChangeNotifierProvider<Medicprovider>(
                                 create: (_) => Medicprovider(),
-                                child: lifeguardProfile("medic"))));
+                                child: Profile("medic"))));
               },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.notifications,
-              ),
-              title: Row(children: <Widget>[
-                Text('Notifications'),
-                Switch(
-                  onChanged: toggleSwitch,
-                  value: isSwitched,
-                  activeColor: Colors.blue,
-                  activeTrackColor: Colors.grey,
-                  inactiveThumbColor: Colors.redAccent,
-                  inactiveTrackColor: Colors.grey,
-                ),
-              ]),
-              onTap: () {},
             ),
             ListTile(
                 leading: Icon(Icons.exit_to_app),

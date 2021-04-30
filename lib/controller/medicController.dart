@@ -43,6 +43,7 @@ class Medicprovider with ChangeNotifier {
     print(nMap);
     for (final key in nMap.keys) {
       if (key == 'deleted') medic[userIndex].deleted = nMap[key];
+      if (key == 'username') medic[userIndex].username = nMap[key];
     }
     notifyListeners();
   }

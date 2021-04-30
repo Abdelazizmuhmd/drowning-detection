@@ -13,21 +13,22 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pooleye/controller/medicController.dart';
 import 'package:pooleye/controller/organizationManagerController.dart';
+import 'package:pooleye/services/loginAuth.dart';
 
-class lifeguardProfile extends StatefulWidget {
+class Profile extends StatefulWidget {
   static Pattern pattern;
   final String type;
-  _lifeguardProfile createState() => _lifeguardProfile(type);
-  lifeguardProfile(this.type);
+  _Profile createState() => _Profile(type);
+  Profile(this.type);
 }
 
-class _lifeguardProfile extends State<lifeguardProfile> {
+class _Profile extends State<Profile> {
   final String accType;
-  _lifeguardProfile(this.accType);
+  _Profile(this.accType);
   GetFirebase fb = GetFirebase();
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
   TextFormField test;
-  static final validCharacters = RegExp(r"^[a-zA-Z]+$");
+  static final validCharacters = RegExp(r"^(?:.*[a-zA-Z].*){3}");
   final _formKey = GlobalKey<FormState>();
   TextEditingController _customController;
   //Userprovider userOn = new Userprovider();
@@ -55,18 +56,22 @@ class _lifeguardProfile extends State<lifeguardProfile> {
           .then((value) {
         prog = false;
       });
+      update = Provider.of<Lifeguardprovider>(this.context, listen: false);
     } else if (accType == 'medic') {
       Provider.of<Medicprovider>(this.context, listen: false)
           .fetchdata()
           .then((value) {
         prog = false;
       });
+      update = Provider.of<Medicprovider>(this.context, listen: false);
     } else if (accType == 'org') {
       Provider.of<OrganizationMangerprovider>(this.context, listen: false)
           .fetchdata()
           .then((value) {
         prog = false;
       });
+      update =
+          Provider.of<OrganizationMangerprovider>(this.context, listen: false);
     }
     //update = Provider.of<Lifeguardprovider>(this.context, listen: false);
     var uPic;
@@ -97,54 +102,48 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                 width: 550,
                 child: Form(
                   key: _formKey,
-                  child: type == "No."
-                      ? Column(
-                          children: [
-                            MaterialButton(
-                              elevation: 5.0,
-                              child: Text('Submit'),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  // If the form is valid, Go to Home screen.
-                                }
-                              },
-                            ),
-                          ],
-                        )
-                      : Column(
-                          children: [
-                            TextFormField(
-                              validator: (value) {
-                                if (type == "Password") {
-                                  if (value.isEmpty) {
-                                    return 'Please Enter Last Name';
-                                  }
-                                  if (value.length < 3) {
-                                    return 'Last Name is too short';
-                                  }
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        validator: (value) {
+                          if (type == "Name" || type == "Organization Name") {
+                            if (value.isEmpty) {
+                              return 'Please Enter Name';
+                            }
+                            if (value.length < 3) {
+                              return 'Name is too short';
+                            }
 
-                                  if (value.length > 18) {
-                                    return 'Last Name is too long';
-                                  }
-                                  if (!validCharacters.hasMatch(value)) {
-                                    return 'Last Name should be alphabets only';
-                                  }
-                                  return null;
-                                }
-                              },
-                              controller: _customController,
-                            ),
-                            MaterialButton(
-                              elevation: 5.0,
-                              child: Text('Submit'),
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  // If the form is valid, Go to Home screen.
-                                }
-                              },
-                            )
-                          ],
-                        ),
+                            if (value.length > 18) {
+                              return 'Name is too long';
+                            }
+                            if (!validCharacters.hasMatch(value)) {
+                              return 'Name should contain at least 3 letters';
+                            }
+                            return null;
+                          }
+                        },
+                        controller: _customController,
+                      ),
+                      MaterialButton(
+                        elevation: 5.0,
+                        child: Text('Submit'),
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            update.updateData(
+                                user_id,
+                                accType == 'org'
+                                    ? {
+                                        'orgainsationName':
+                                            _customController.text
+                                      }
+                                    : {'username': _customController.text});
+                            Navigator.pop(context);
+                          }
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
             );
@@ -202,9 +201,16 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                               ? Container()
                               : Icon(Icons.edit),
                       onPressed: () {
-                        if (type == "Logout")
-                          print("logout");
-                        else
+                        if (type == "Logout") {
+                          GetFirebase().auth.signOut();
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AuthFormLogin()),
+                            (Route<dynamic> route) =>
+                                false, // remove back arrow
+                          );
+                        } else
                           createAlertDialog(context, type, hintText);
                       },
                     ),
@@ -239,6 +245,18 @@ class _lifeguardProfile extends State<lifeguardProfile> {
       user_id = GetFirebase().getUserID;
       userIndex = userList.indexWhere((element) => element.id == user_id);
     }
+    Future getImage() async {
+      var image = await ImagePicker.pickImage(
+          source: ImageSource.gallery, maxWidth: 600);
+      setState(() {
+        uImage = image;
+      });
+      String filename = "user" + user_id + '.png';
+      _imageUrl = '';
+      var firebaseStorageRef = GetFirebase().fbStorage.child(filename);
+      var uploadTask = firebaseStorageRef.putFile(uImage).then((loc) {});
+    }
+
     return err
         ? WillPopScope(
             onWillPop: () async {
@@ -324,7 +342,9 @@ class _lifeguardProfile extends State<lifeguardProfile> {
                                           Icons.edit,
                                           color: Colors.white,
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          getImage();
+                                        },
                                       ),
                                     ),
                                   ),

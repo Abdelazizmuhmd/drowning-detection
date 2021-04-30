@@ -413,6 +413,22 @@ class lifeguard extends State<lifeguard_notify> {
     );
   }
 
+  bool isSwitched = true;
+
+  void toggleSwitch(bool value) {
+    LFC.updatesubscriber(GetFirebase().getUserID, value);
+
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+      });
+    } else {
+      setState(() {
+        isSwitched = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     lgList =
@@ -433,6 +449,14 @@ class lifeguard extends State<lifeguard_notify> {
                   Icon(
                     Icons.notifications_active_rounded,
                     color: Colors.yellow,
+                  ),
+                  Switch(
+                    onChanged: toggleSwitch,
+                    value: isSwitched,
+                    activeColor: Colors.blue,
+                    activeTrackColor: Colors.grey,
+                    inactiveThumbColor: Colors.redAccent,
+                    inactiveTrackColor: Colors.grey,
                   ),
                 ],
               ),

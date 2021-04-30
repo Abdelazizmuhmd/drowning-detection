@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/view/appMenuView.dart';
 import "package:provider/provider.dart";
@@ -59,7 +60,7 @@ class medic extends State<medic_notify_page> {
                       Row(
                         children: [
                           Text(
-                            "Status: ",
+                            "Status: \n",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -229,6 +230,22 @@ class medic extends State<medic_notify_page> {
     );
   }
 
+  bool isSwitched = true;
+
+  void toggleSwitch(bool value) {
+    LFC.updatesubscriber(GetFirebase().getUserID, value);
+
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+      });
+    } else {
+      setState(() {
+        isSwitched = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey =
@@ -246,6 +263,14 @@ class medic extends State<medic_notify_page> {
             Icon(
               Icons.notifications_active_rounded,
               color: Colors.yellow,
+            ),
+            Switch(
+              onChanged: toggleSwitch,
+              value: isSwitched,
+              activeColor: Colors.blue,
+              activeTrackColor: Colors.grey,
+              inactiveThumbColor: Colors.redAccent,
+              inactiveTrackColor: Colors.grey,
             ),
           ],
         ),

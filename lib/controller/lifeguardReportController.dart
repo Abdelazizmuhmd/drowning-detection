@@ -41,4 +41,19 @@ class LifeguardReportController {
         .doc(id)
         .update({'sent': true}).catchError((e) {});
   }
+
+  void updatesubscriber(id, subscriber) {
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(id)
+        .update({'subscriber': subscriber}).catchError((e) {});
+  }
+
+  // void getsubscriber(id) {
+  //   FirebaseFirestore.instance
+  //       .collection('users')
+  //       .doc(id)
+  //       .get()
+  //       .then((value) => value['subscriber']);
+  // }
 }

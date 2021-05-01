@@ -14,12 +14,12 @@ class Medicprovider with ChangeNotifier {
           if (document.data()['role'] == "medic" &&
               document.data()['deleted'] == 0) {
             medic.add(Medic(
-              id: await document.id,
-              orgCode: await document.data()['orgCode'],
-              role: await document.data()['role'],
-              email: await document.data()['email'],
-              username: await document.data()['username'],
-            ));
+                id: await document.id,
+                orgCode: await document.data()['orgCode'],
+                role: await document.data()['role'],
+                email: await document.data()['email'],
+                username: await document.data()['username'],
+                switcher: await document.data()['subscriber']));
           }
         });
         snaps.get().then((value) {

@@ -19,8 +19,9 @@ class lifeguard_notify extends StatefulWidget {
 }
 
 class lifeguard extends State<lifeguard_notify> {
-  var lgList;
+  List lgList;
   int userIndex;
+  bool isSwitched;
   void initState() {
     Provider.of<Lifeguardprovider>(this.context, listen: false)
         .fetchdata()
@@ -413,7 +414,14 @@ class lifeguard extends State<lifeguard_notify> {
     );
   }
 
-  bool isSwitched = true;
+  void updateSwitch() {
+    if (lgList.length > 0) {
+      if (lgList[userIndex].switcher == true)
+        isSwitched = true;
+      else
+        isSwitched = false;
+    }
+  }
 
   void toggleSwitch(bool value) {
     LFC.updatesubscriber(GetFirebase().getUserID, value);
@@ -421,10 +429,12 @@ class lifeguard extends State<lifeguard_notify> {
     if (isSwitched == false) {
       setState(() {
         isSwitched = true;
+        lgList[userIndex].switcher = true;
       });
     } else {
       setState(() {
         isSwitched = false;
+        lgList[userIndex].switcher = false;
       });
     }
   }
@@ -437,6 +447,8 @@ class lifeguard extends State<lifeguard_notify> {
         lgList.indexWhere((element) => element.id == GetFirebase().getUserID);
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
+    //if (prog == false) isSwitched = lgList[userIndex].switcher;
+    updateSwitch();
     return prog
         ? CircularProgressIndicator()
         : Scaffold(

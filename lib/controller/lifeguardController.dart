@@ -19,6 +19,7 @@ class Lifeguardprovider with ChangeNotifier {
               role: await document.data()['role'],
               email: await document.data()['email'],
               username: await document.data()['username'],
+              switcher: await document.data()['subscriber'],
             ));
           }
         });

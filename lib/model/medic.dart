@@ -7,13 +7,15 @@ class Medic extends User {
   String email;
   int deleted;
   String username;
+  bool switcher;
   Medic(
       {this.id,
       this.orgCode,
       this.role,
       this.email,
       this.deleted,
-      this.username});
+      this.username,
+      this.switcher});
   String get getorgCode {
     return orgCode;
   }

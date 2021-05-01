@@ -21,6 +21,7 @@ class medic_notify_page extends StatefulWidget {
 class medic extends State<medic_notify_page> {
   var medicList;
   int userIndex;
+  bool isSwitched;
   var prog = true;
   void initState() {
     Provider.of<Medicprovider>(this.context, listen: false)
@@ -230,7 +231,14 @@ class medic extends State<medic_notify_page> {
     );
   }
 
-  bool isSwitched = true;
+  void updateSwitch() {
+    if (medicList.length > 0) {
+      if (medicList[userIndex].switcher == true)
+        isSwitched = true;
+      else
+        isSwitched = false;
+    }
+  }
 
   void toggleSwitch(bool value) {
     LFC.updatesubscriber(GetFirebase().getUserID, value);
@@ -238,10 +246,12 @@ class medic extends State<medic_notify_page> {
     if (isSwitched == false) {
       setState(() {
         isSwitched = true;
+        medicList[userIndex].switcher = true;
       });
     } else {
       setState(() {
         isSwitched = false;
+        medicList[userIndex].switcher = false;
       });
     }
   }
@@ -253,6 +263,7 @@ class medic extends State<medic_notify_page> {
     medicList = Provider.of<Medicprovider>(this.context, listen: true).medic;
     userIndex = medicList
         .indexWhere((element) => element.id == GetFirebase().getUserID);
+    updateSwitch();
     return Scaffold(
       key: _scaffoldKey,
       drawer: SideDrawer('medic'),
@@ -266,7 +277,7 @@ class medic extends State<medic_notify_page> {
             ),
             Switch(
               onChanged: toggleSwitch,
-              value: isSwitched,
+              value: isSwitched != null ? isSwitched : true,
               activeColor: Colors.blue,
               activeTrackColor: Colors.grey,
               inactiveThumbColor: Colors.redAccent,

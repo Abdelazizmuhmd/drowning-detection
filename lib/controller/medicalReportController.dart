@@ -27,6 +27,7 @@ class MedicReportController {
       'comment': comment,
       'date': now,
       'orgID': orgId,
+      'sentTO': "organisationManager"
     });
   }
 }

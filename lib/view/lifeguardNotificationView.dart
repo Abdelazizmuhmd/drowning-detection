@@ -53,16 +53,37 @@ class lifeguard extends State<lifeguard_notify> {
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
               title: Center(
-                child: Text(
-                  "Send A Report",
-                  style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
-                ),
-              ),
+                  child: Column(
+                children: [
+                  Text(
+                    "Send A Report",
+                    style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
+                  ),
+                  Divider(
+                    color: Colors.black,
+                    height: 10,
+                    thickness: 2,
+                    indent: 110,
+                    endIndent: 110,
+                  ),
+                  SizedBox(
+                    height: 35,
+                  ),
+                ],
+              )),
               content: Container(
-                height: 320,
+                height: 300,
                 width: 350,
-                child: Column(
+                child: ListView(
                   children: [
+                    Text(
+                      "Choose The Drowning Status  \n",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -83,6 +104,8 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text('False Alert',
                                                 style: TextStyle(
@@ -103,8 +126,10 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Text('False Alarm',
+                                            Text('False Alert',
                                                 style: TextStyle(
                                                     fontSize: 15,
                                                     color: Colors.white)),
@@ -141,6 +166,8 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text('Need CPR',
                                                 style: TextStyle(
@@ -161,6 +188,8 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text('Need CPR',
                                                 style: TextStyle(
@@ -199,6 +228,8 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text('Get',
                                                 style: TextStyle(
@@ -223,6 +254,8 @@ class lifeguard extends State<lifeguard_notify> {
                                           });
                                         },
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text('Get',
                                                 style: TextStyle(
@@ -246,6 +279,9 @@ class lifeguard extends State<lifeguard_notify> {
                           ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 25,
                     ),
                     Form(
                       key: _formKey,

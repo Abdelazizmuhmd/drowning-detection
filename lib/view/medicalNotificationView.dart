@@ -21,7 +21,6 @@ class medic_notify_page extends StatefulWidget {
 class medic extends State<medic_notify_page> {
   var medicList;
   int userIndex;
-  bool isSwitched;
   var prog = true;
   void initState() {
     Provider.of<Medicprovider>(this.context, listen: false)
@@ -47,97 +46,102 @@ class medic extends State<medic_notify_page> {
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
               title: Center(
-                child: Text(
-                  "Send A Full Report",
-                  style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
-                ),
-              ),
+                  child: Column(
+                children: [
+                  Text(
+                    "Send Full Report",
+                    style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
+                  ),
+                  Divider(
+                    color: Colors.black,
+                    height: 10,
+                    thickness: 2,
+                    indent: 110,
+                    endIndent: 110,
+                  ),
+                ],
+              )),
               content: Container(
                 height: 300,
                 width: 350,
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Status: ",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            type,
-                            style: TextStyle(
-                                color: Colors.red, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      Text(
-                        "Lifeguard Notes: \n",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      Text(
-                        name,
-                        style: TextStyle(
-                          color: Colors.red,
+                child: ListView(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Status: ",
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          type,
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Text(
+                      "Lifeguard Notes: \n",
+                      style: TextStyle(
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
-                        ),
+                          fontSize: 15),
+                    ),
+                    Text(
+                      name,
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Expanded(
-                        child: Form(
-                          key: _formKey,
-                          child: Container(
-                            padding: EdgeInsets.all(20.0),
-                            child: Column(
-                              children: <Widget>[
-                                TextFormField(
-                                  controller: _commentField,
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Please enter Your comment';
-                                    }
-                                    return null;
-                                  },
-                                  decoration: new InputDecoration(
-                                    hintText: 'Medic Notes',
-                                    icon: new Icon(Icons.comment),
-                                    border: const OutlineInputBorder(),
-                                  ),
-                                ),
-                                RaisedButton(
-                                  onPressed: () {
-                                    // Validate returns true if the form is valid, or false
-                                    // otherwise.
-                                    if (_formKey.currentState.validate()) {
-                                      MRC.addMedicReport(
-                                          id: id,
-                                          comment: _commentField.text,
-                                          orgId: medicList[userIndex].orgCode);
-                                      LFC.updateSent(id);
-                                      Navigator.pop(context);
-                                    }
-                                  },
-                                  child: Text('Send'),
-                                  color: Colors.red,
-                                  textColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100.0),
-                                  ),
-                                ),
-                              ],
+                    ),
+                    Form(
+                      key: _formKey,
+                      child: Container(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              controller: _commentField,
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Please enter Your comment';
+                                }
+                                return null;
+                              },
+                              decoration: new InputDecoration(
+                                hintText: 'Medic Notes',
+                                icon: new Icon(Icons.comment),
+                                border: const OutlineInputBorder(),
+                              ),
                             ),
-                          ),
+                            RaisedButton(
+                              onPressed: () {
+                                // Validate returns true if the form is valid, or false
+                                // otherwise.
+                                if (_formKey.currentState.validate()) {
+                                  MRC.addMedicReport(
+                                      id: id,
+                                      comment: _commentField.text,
+                                      orgId: medicList[userIndex].orgCode);
+                                  LFC.updateSent(id);
+                                  Navigator.pop(context);
+                                }
+                              },
+                              child: Text('Send'),
+                              color: Colors.red,
+                              textColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100.0),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             );
@@ -231,14 +235,7 @@ class medic extends State<medic_notify_page> {
     );
   }
 
-  void updateSwitch() {
-    if (medicList.length > 0) {
-      if (medicList[userIndex].switcher == true)
-        isSwitched = true;
-      else
-        isSwitched = false;
-    }
-  }
+  bool isSwitched = true;
 
   void toggleSwitch(bool value) {
     LFC.updatesubscriber(GetFirebase().getUserID, value);
@@ -246,12 +243,10 @@ class medic extends State<medic_notify_page> {
     if (isSwitched == false) {
       setState(() {
         isSwitched = true;
-        medicList[userIndex].switcher = true;
       });
     } else {
       setState(() {
         isSwitched = false;
-        medicList[userIndex].switcher = false;
       });
     }
   }
@@ -263,7 +258,6 @@ class medic extends State<medic_notify_page> {
     medicList = Provider.of<Medicprovider>(this.context, listen: true).medic;
     userIndex = medicList
         .indexWhere((element) => element.id == GetFirebase().getUserID);
-    updateSwitch();
     return Scaffold(
       key: _scaffoldKey,
       drawer: SideDrawer('medic'),
@@ -277,7 +271,7 @@ class medic extends State<medic_notify_page> {
             ),
             Switch(
               onChanged: toggleSwitch,
-              value: isSwitched != null ? isSwitched : true,
+              value: isSwitched,
               activeColor: Colors.blue,
               activeTrackColor: Colors.grey,
               inactiveThumbColor: Colors.redAccent,

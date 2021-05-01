@@ -31,7 +31,8 @@ class LifeguardReportController {
       'type': type,
       'date': now,
       'orgID': orgId,
-      'sent': false
+      'sent': false,
+      'sentTO': "medic"
     });
   }
 

@@ -61,7 +61,7 @@ class medic extends State<medic_notify_page> {
                       Row(
                         children: [
                           Text(
-                            "Status: \n",
+                            "Status: ",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),

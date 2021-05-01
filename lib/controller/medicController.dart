@@ -1,10 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pooleye/database/firebase.dart';
 import 'package:pooleye/model/medic.dart';
 
 class Medicprovider with ChangeNotifier {
   List<Medic> medic = [];
+  GetFirebase code = GetFirebase();
+  static var userRole;
+
+  // ignore: cancel_subscriptions
+  var getTheUserOrgCode = FirebaseFirestore.instance
+      .collection("users")
+      .doc(FirebaseAuth.instance.currentUser.uid)
+      .snapshots()
+      .listen((event) {
+    userRole = event.get("orgCode");
+  });
   Future<void> fetchdata() async {
     await Firebase.initializeApp();
     try {
@@ -12,7 +25,8 @@ class Medicprovider with ChangeNotifier {
       snaps.snapshots().listen((QuerySnapshot querySnapshot) {
         querySnapshot.docs.forEach((document) async {
           if (document.data()['role'] == "medic" &&
-              document.data()['deleted'] == 0) {
+              document.data()['deleted'] == 0 &&
+              document.data()['orgCode'] == userRole) {
             medic.add(Medic(
                 id: await document.id,
                 orgCode: await document.data()['orgCode'],

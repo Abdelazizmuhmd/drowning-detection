@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/loginView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgainsationDailyreportView.dart';
+import 'package:provider/provider.dart';
 
 import '../view/medicalNotificationView.dart';
 
@@ -44,7 +46,10 @@ class AuthFormLoginState extends State<AuthFormLogin> {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-                builder: (context) => BuilddailyReportList('lifeguard')),
+                builder: (context) =>
+                    ChangeNotifierProvider<OrganizationMangerprovider>(
+                        create: (_) => OrganizationMangerprovider(),
+                        child: BuilddailyReportList('lifeguard'))),
             (Route<dynamic> route) => false, // remove back arrow
           );
         }

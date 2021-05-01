@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:pooleye/controller/lifeguardNotificationController.dart';
 import 'package:pooleye/controller/lifeguardReportController.dart';
 import 'package:pooleye/controller/medicalReportController.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 import 'package:pooleye/database/firebase.dart';
+import 'package:pooleye/model/OrganisationManager.dart';
 import 'package:pooleye/model/lifeguardReport.dart';
 import 'package:pooleye/model/medicReport.dart';
 import 'package:pooleye/model/notification.dart';
@@ -21,14 +23,21 @@ class daily extends State<daily_report> {
   String something;
   daily(this.something);
   Color c1 = const Color.fromRGBO(110, 204, 234, 1.0);
-  List reports = [
-    'Drowning Case At Swimming Pool No.3   "Time:09:57 PM"',
-    'Drowning Case At Swimming Pool No.1   "Time:11:02 PM"',
-    'Drowning Case At Swimming Pool No.4   "Time:02:15 PM"',
-    'Drowning Case At Swimming Pool No.1   "Time: 03:06 PM"'
-  ];
 
   GetFirebase color = GetFirebase();
+  List<OrganisationManager> orgmanagers;
+  bool prog = true;
+  int userIndex;
+  @override
+  void initState() {
+    Provider.of<OrganizationMangerprovider>(this.context, listen: false)
+        .fetchdata()
+        .then((value) {
+      prog = false;
+    });
+
+    super.initState();
+  }
 
   // showReport() {
   //   return showDialog(
@@ -126,13 +135,21 @@ class daily extends State<daily_report> {
   Widget _buildChatList(GlobalKey<ScaffoldState> key) {
     if (something == "lifeguard") {
       print("Lifeguard");
+      GetFirebase orgCode = GetFirebase();
       List<LifeguardReport> notiList = [];
       List<LifeguardReport> orgList =
           Provider.of<List<LifeguardReport>>(context);
+      if (prog == false) {
+        userIndex = orgmanagers
+            .indexWhere((element) => element.id == orgCode.getUserID);
+      }
+      orgmanagers =
+          Provider.of<OrganizationMangerprovider>(this.context, listen: true)
+              .orgManagers;
 
       if (orgList != null) {
         orgList.forEach((element) {
-          if (element.orgId == 'Ahlyclub49301616522931404') {
+          if (element.orgId == orgmanagers[userIndex].getorgCode) {
             notiList.add(element);
           }
         });
@@ -156,13 +173,20 @@ class daily extends State<daily_report> {
 
     if (something == "medic") {
       print("medic");
+      GetFirebase orgCode = GetFirebase();
 
       List<MedicReport> notiList = [];
       List<MedicReport> orgList = Provider.of<List<MedicReport>>(context);
-
+      if (prog == false) {
+        userIndex = orgmanagers
+            .indexWhere((element) => element.id == orgCode.getUserID);
+      }
+      orgmanagers =
+          Provider.of<OrganizationMangerprovider>(this.context, listen: true)
+              .orgManagers;
       if (orgList != null) {
         orgList.forEach((element) {
-          if (element.orgId == 'Ahlyclub49301616522931404') {
+          if (element.orgId == orgmanagers[userIndex].getorgCode) {
             notiList.add(element);
           }
         });
@@ -353,11 +377,17 @@ class _BuilddailyReportListState extends State<BuilddailyReportList> {
     //     value: val2, child: daily_report());
     if (something == 'lifeguard') {
       return StreamProvider<List<LifeguardReport>>.value(
-          value: val2, child: daily_report('lifeguard'));
+          value: val2,
+          child: ChangeNotifierProvider<OrganizationMangerprovider>(
+              create: (_) => OrganizationMangerprovider(),
+              child: daily_report('lifeguard')));
     }
     if (something == 'medic') {
       return StreamProvider<List<MedicReport>>.value(
-          value: val, child: daily_report('medic'));
+          value: val,
+          child: ChangeNotifierProvider<OrganizationMangerprovider>(
+              create: (_) => OrganizationMangerprovider(),
+              child: daily_report('medic')));
     }
   }
 }

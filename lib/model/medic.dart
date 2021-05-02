@@ -20,7 +20,7 @@ class Medic extends User {
     return orgCode;
   }
 
-  String get geId {
+  String get getId {
     return id;
   }
 

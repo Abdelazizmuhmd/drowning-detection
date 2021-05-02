@@ -2,11 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:pooleye/controller/organizationManagerController.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
 import 'package:pooleye/view/orgainsationDailyreportView.dart';
 import 'package:pooleye/view/signupView.dart';
 import 'dart:math';
+
+import 'package:provider/provider.dart';
 
 class AuthForm extends StatefulWidget {
   @override
@@ -21,7 +24,7 @@ class AuthFormState extends State<AuthForm> {
   bool _isLoading = false;
   String profileImage = null;
   var rng = new Random();
-FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
+  FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
 
   bool codeCheck = true;
   bool usernameCheck = true;
@@ -54,9 +57,8 @@ FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
           'role': role,
           'profileImage': profileImage,
         });
-    firebaseMessaging.subscribeToTopic(fullOrgCode+role);
-    print(fullOrgCode+role);
-
+        firebaseMessaging.subscribeToTopic(fullOrgCode + role);
+        print(fullOrgCode + role);
 
         FirebaseFirestore.instance
             .collection('organisations')
@@ -65,11 +67,13 @@ FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
           'orgCode': fullOrgCode,
           'orgainsationName': orgainsationName,
         });
-
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-              builder: (context) => BuilddailyReportList('lifeguard')),
+              builder: (context) =>
+                  ChangeNotifierProvider<OrganizationMangerprovider>(
+                      create: (_) => OrganizationMangerprovider(),
+                      child: BuilddailyReportList('lifeguard'))),
           (Route<dynamic> route) => false, // remove back arrow
         );
       } on FirebaseAuthException catch (e) {

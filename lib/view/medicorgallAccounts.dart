@@ -61,9 +61,36 @@ class _OrgAccountsmedic extends State<OrgAccountsmedic> {
                           icon: Icon(Icons.delete),
                           color: Colors.red,
                           onPressed: () {
-                            update.updateData(
-                                medic[index].geId, {'deleted': deleted});
-                            Navigator.of(context).pop();
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Center(
+                                    child: Text("Confirm Delete"),
+                                  ),
+                                  content:
+                                      Text("Are You Sure Want To Proceed ?"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text("YES"),
+                                      onPressed: () {
+                                        update.updateData(medic[index].getId,
+                                            {'deleted': deleted});
+
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    FlatButton(
+                                      child: Text("CANCEL"),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           })
                     ],
                   ),

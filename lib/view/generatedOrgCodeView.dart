@@ -40,7 +40,10 @@ class GeneratedCodeState extends State<GeneratedCode> {
     orgmanagers =
         Provider.of<OrganizationMangerprovider>(this.context, listen: true)
             .orgManagers;
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text("Generated Code Page"),
         backgroundColor: c1,
@@ -80,11 +83,12 @@ class GeneratedCodeState extends State<GeneratedCode> {
                             icon: Icon(Icons.content_copy),
                             onPressed: () async {
                               await FlutterClipboard.copy(controller.text);
-
-                              Scaffold.of(context).showSnackBar(
-                                SnackBar(
-                                    content: Text('✓   Copied to Clipboard')),
-                              );
+                              _scaffoldKey.currentState.showSnackBar(SnackBar(
+                                content: Text(
+                                  '✓   Copied to Clipboard',
+                                ),
+                                duration: Duration(seconds: 2),
+                              ));
                             },
                           ),
                         ],

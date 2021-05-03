@@ -61,17 +61,7 @@ class AuthFormLoginState extends State<AuthFormLogin> {
             MaterialPageRoute(builder: (context) => BuildList()),
             (Route<dynamic> route) => false, // remove back arrow
           );
-        } else {
-          Scaffold.of(ctx).showSnackBar(SnackBar(
-            content: Text("Not Found Account"),
-            backgroundColor: Theme.of(ctx).errorColor,
-          ));
-          setState(() {
-            _isLoading = false;
-          });
-        }
-
-        if (userRole == "medic" && deleted == 0) {
+        } else if (userRole == "medic" && deleted == 0) {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => BuildReportList()),
@@ -94,6 +84,7 @@ class AuthFormLoginState extends State<AuthFormLogin> {
       } else if (e.code == 'wrong-password') {
         message = 'Wrong password provided for that user.';
       }
+
       Scaffold.of(ctx).showSnackBar(SnackBar(
         content: Text(message),
         backgroundColor: Theme.of(ctx).errorColor,

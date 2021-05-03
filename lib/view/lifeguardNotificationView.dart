@@ -498,14 +498,16 @@ class lifeguard extends State<lifeguard_notify> {
                     Icons.notifications_active_rounded,
                     color: Colors.yellow,
                   ),
-                  Switch(
-                    onChanged: toggleSwitch,
-                    value: isSwitched,
-                    activeColor: Colors.blue,
-                    activeTrackColor: Colors.grey,
-                    inactiveThumbColor: Colors.redAccent,
-                    inactiveTrackColor: Colors.grey,
-                  ),
+                  isSwitched == null
+                      ? CircularProgressIndicator()
+                      : Switch(
+                          onChanged: toggleSwitch,
+                          value: isSwitched,
+                          activeColor: Colors.blue,
+                          activeTrackColor: Colors.grey,
+                          inactiveThumbColor: Colors.redAccent,
+                          inactiveTrackColor: Colors.grey,
+                        ),
                 ],
               ),
               backgroundColor: c1,

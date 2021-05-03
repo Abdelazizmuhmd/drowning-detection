@@ -31,4 +31,8 @@ class Medic extends User {
   String get getemail {
     return email;
   }
+
+  String get getusername {
+    return username;
+  }
 }

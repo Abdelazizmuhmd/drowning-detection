@@ -21,19 +21,21 @@ class LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   String _savedDataUsername = "";
   String _savedDataPassword = "";
-  bool _showPassword = false;
+  bool _isHidden = true;
+  String userNameObsecure;
 
   var _usernameField = new TextEditingController();
   var _passwordField = new TextEditingController();
 
   @override
   void initState() {
-    super.initState();
     _loadSavedData();
+    super.initState();
   }
 
   _loadSavedData() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    userNameObsecure = sharedPreferences.getString('username');
     setState(() {
       if (sharedPreferences.getString('username') != null &&
           sharedPreferences.getString('username').isNotEmpty) {
@@ -131,18 +133,14 @@ class LoginState extends State<Login> {
                       hintText: 'Password',
                       icon: new Icon(Icons.lock),
                       border: const OutlineInputBorder(),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          Icons.remove_red_eye,
-                          color: this._showPassword ? Colors.blue : Colors.grey,
+                      suffixIcon: InkWell(
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden ? Icons.visibility : Icons.visibility_off,
                         ),
-                        onPressed: () {
-                          setState(
-                              () => this._showPassword = !this._showPassword);
-                        },
                       ),
                     ),
-                    obscureText: !this._showPassword,
+                    obscureText: _isHidden,
                   ),
                   widget._isLoading
                       ? CircularProgressIndicator()
@@ -154,14 +152,15 @@ class LoginState extends State<Login> {
                               // otherwise.
                               if (_formKey.currentState.validate()) {
                                 //If the form is valid, Go to Home screen.
+
                                 widget.submitFn(
                                   _usernameField.text.trim(),
                                   _passwordField.text.trim(),
                                   context,
                                 );
-
                                 _saveData(
                                     _usernameField.text, _passwordField.text);
+                                _loadSavedData();
                               }
                             },
                             child: Text('Login'),
@@ -192,5 +191,13 @@ class LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  void _togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+      _savedDataUsername = _usernameField.text;
+      _savedDataPassword = _passwordField.text;
+    });
   }
 }

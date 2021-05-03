@@ -47,57 +47,68 @@ class _OrgAccountslifeguard extends State<OrgAccountslifeguard> {
               padding: const EdgeInsets.all(8),
               itemCount: lifeguard.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        lifeguard[index].getemail,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      IconButton(
-                          icon: Icon(Icons.delete),
-                          color: Colors.red,
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Center(
-                                    child: Text("Confirm Delete"),
-                                  ),
-                                  content:
-                                      Text("Are You Sure Want To Proceed ?"),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      child: Text("YES"),
-                                      onPressed: () {
-                                        update.updateData(
-                                            lifeguard[index].getId,
-                                            {'deleted': deleted});
+                return Card(
+                  color: Colors.cyan.shade600,
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          Icons.email,
+                          color: Colors.white,
+                        ),
+                        Text(" " + lifeguard[index].getemail,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                    subtitle: Row(
+                      children: [
+                        Icon(
+                          Icons.person,
+                          color: Colors.white,
+                        ),
+                        Text(" " + lifeguard[index].getusername,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                    trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        color: Colors.red,
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Center(
+                                  child: Text("Confirm Delete"),
+                                ),
+                                content: Text("Are You Sure Want To Proceed ?"),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text("YES"),
+                                    onPressed: () {
+                                      update.updateData(lifeguard[index].getId,
+                                          {'deleted': deleted});
 
-                                        Navigator.of(context).pop();
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                    FlatButton(
-                                      child: Text("CANCEL"),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          })
-                    ],
+                                      Navigator.of(context).pop();
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                  FlatButton(
+                                    child: Text("CANCEL"),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        }),
                   ),
-                  height: 50,
-                  color: Colors.cyan,
                 );
               },
               separatorBuilder: (BuildContext context, int index) =>

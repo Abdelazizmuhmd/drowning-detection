@@ -33,8 +33,7 @@ class AuthFormState extends State<AuthForm> {
       [String organisationCode, String username]) async {
     var codeId = rng.nextInt(10000);
     var genrated = DateTime.now().millisecondsSinceEpoch;
-    var fullOrgCode =
-        orgainsationName + codeId.toString() + genrated.toString();
+    var fullOrgCode = codeId.toString() + genrated.toString();
 
     if (role == "organisationManager") {
       try {

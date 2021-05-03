@@ -134,7 +134,6 @@ class daily extends State<daily_report> {
   // #docregion _buildSuggestions
   Widget _buildChatList(GlobalKey<ScaffoldState> key) {
     if (something == "lifeguard") {
-      print("Lifeguard");
       GetFirebase orgCode = GetFirebase();
       List<LifeguardReport> notiList = [];
       List<LifeguardReport> orgList =
@@ -172,7 +171,6 @@ class daily extends State<daily_report> {
     }
 
     if (something == "medic") {
-      print("medic");
       GetFirebase orgCode = GetFirebase();
 
       List<MedicReport> notiList = [];

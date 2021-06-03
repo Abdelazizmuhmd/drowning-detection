@@ -3,12 +3,12 @@ const admin = require('firebase-admin');
 
 admin.initializeApp();
 exports.alarmnotifiction = functions.firestore
-  .document('lifeguardnotifications/{alrm}')
+  .document('lifeguardnotifications/{alarm}')
   .onCreate((snapshot, context) => {
       console.log(snapshot.data().orgID+snapshot.data().role)
     return admin.messaging().sendToTopic(snapshot.data().orgID+snapshot.data().sentTO, {
       notification: {
-        title: 'ALarm',
+        title: 'Alarm',
         body: snapshot.data().text,
         sound:'defualt',
         clickAction: 'FLUTTER_NOTIFICATION_CLICK',
@@ -33,10 +33,10 @@ exports.medicNotification = functions.firestore
   exports.orgNotification = functions.firestore
   .document('medicreports/{report}')
   .onCreate((snapshot, context) => {
-      console.log(snapshot.data().orgID+snapshot.data().role)
+      console.log(snapshot.data().orgID+snapshot.data().sentTO)
     return admin.messaging().sendToTopic(snapshot.data().orgID+snapshot.data().sentTO, {
       notification: {
-        title: snapshot.data().dae,
+        title: 'Report',
         body: snapshot.data().comment,
         sound:'defualt',
         clickAction: 'FLUTTER_NOTIFICATION_CLICK',

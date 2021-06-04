@@ -72,6 +72,7 @@ flutter:
     - images/AlAhly.jpeg
     - lifeguard.jpg
     - doctor.jpg
+    - Sounds/alarm.mp3
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

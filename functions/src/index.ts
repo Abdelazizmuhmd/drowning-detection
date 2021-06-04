@@ -1,5 +1,9 @@
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
+
+
+
+
 
 admin.initializeApp();
 exports.alarmnotifiction = functions.firestore
@@ -10,8 +14,9 @@ exports.alarmnotifiction = functions.firestore
       notification: {
         title: 'Alarm',
         body: snapshot.data().text,
-        sound:'defualt',
-        clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+        "sound": "alarm.mp3",
+        
+      
       },
     });
   });
@@ -24,8 +29,9 @@ exports.medicNotification = functions.firestore
       notification: {
         title: snapshot.data().type,
         body: snapshot.data().comment,
-        sound:'defualt',
-        clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+        "sound": "alarm.mp3",
+        
+        
       },
     });
   });
@@ -39,7 +45,9 @@ exports.medicNotification = functions.firestore
         title: 'Report',
         body: snapshot.data().comment,
         sound:'defualt',
-        clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+        
       },
     });
   });
+
+

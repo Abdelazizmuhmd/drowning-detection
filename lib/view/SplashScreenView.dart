@@ -7,7 +7,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       appBar: new AppBar(
         //title: Image.asset('images/Dcode_home.jpg', fit: BoxFit.cover),
-        title: new Text("Waiting"),
+        title: new Text("Loading"),
         backgroundColor: c1,
       ),
       backgroundColor: Colors.white,

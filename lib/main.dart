@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pooleye/services/loginAuth.dart';
+import 'package:pooleye/services/signupAuth.dart';
 import 'package:pooleye/view/SplashScreenView.dart';
 import 'package:pooleye/view/lifeguardNotificationView.dart';
 import 'package:pooleye/view/medicalNotificationView.dart';
@@ -24,10 +25,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State<MyApp> {
-  
   @override
   Widget build(BuildContext context) {
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+    var deleted;
     return FutureBuilder(
         future: _initialization,
         builder: (context, appSnapshot) {
@@ -65,21 +66,27 @@ class _MyApp extends State<MyApp> {
                                   false, // remove back arrow
                             );
                           }
-
-                          if (userRole == "lifeguard") {
+                          deleted = event.get("deleted");
+                          if (userRole == "lifeguard" && deleted == 0) {
                             return Navigator.pushAndRemoveUntil(
                               ctx,
                               MaterialPageRoute(builder: (ctx) => BuildList()),
                               (Route<dynamic> route) =>
                                   false, // remove back arrow
                             );
-                          }
-
-                          if (userRole == "medic") {
+                          } else if (userRole == "medic" && deleted == 0) {
                             return Navigator.pushAndRemoveUntil(
                               ctx,
                               MaterialPageRoute(
                                   builder: (ctx) => BuildReportList()),
+                              (Route<dynamic> route) =>
+                                  false, // remove back arrow
+                            );
+                          } else {
+                            return Navigator.pushAndRemoveUntil(
+                              ctx,
+                              MaterialPageRoute(
+                                  builder: (ctx) => AuthFormLogin()),
                               (Route<dynamic> route) =>
                                   false, // remove back arrow
                             );

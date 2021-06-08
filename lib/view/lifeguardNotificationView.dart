@@ -340,7 +340,7 @@ class lifeguard extends State<lifeguard_notify> {
                                       id: id,
                                       comment: _commentField.text,
                                       orgId: lgList[userIndex].orgCode);
-                                  LFN.updateSent(id);
+                                  if (id != null) LFN.updateSent(id);
 
                                   Navigator.pop(context);
                                 }

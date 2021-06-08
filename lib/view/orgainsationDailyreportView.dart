@@ -195,7 +195,7 @@ class daily extends State<daily_report> {
                 padding: const EdgeInsets.all(16.0),
                 itemBuilder: /*1*/ (context, i) {
                   return _buildRow(notiList[i].comment, notiList[i].date, key,
-                      "Submitted by Lifeguard");
+                      "Submitted by Medic");
                 },
                 separatorBuilder: (context, index) {
                   return Divider();

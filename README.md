@@ -1,8 +1,4 @@
-# pooleye
-
-Pooleye drowning detection project.
-
-## Getting Started
+## Pooleye
 
 Pooleye is a project made with the aim of drowning detection in swimming pools. Drowning is not like what we see in movies, the real features of drowning don't include shouting for help, but what is really present in drowning behavior is having a vertical body resurfacing up and down on the water surface. Our main goal is to classify two behavior, the first one which is the drowning behavior discussed earlier, and the other normal behavior of a swimmer which is called water treading which is specified by having a cycle like motion underwater.
 Due to the lack of datasets, we collected our own dataset by recording videos underwater of both behaviors, then, we trained it on a CNN model scoring 97% accuracy.

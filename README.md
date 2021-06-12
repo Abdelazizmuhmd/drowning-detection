@@ -12,6 +12,7 @@ The Mobile App has three main users, first, the lifeguard receives the drowning
 
 ## Application Screenshots
 ![WhatsApp Image 2021-06-12 at 4 38 03 PM](https://user-images.githubusercontent.com/43723746/121779710-587fb300-cb9d-11eb-89e1-2b54b4df5416.jpeg) ![WhatsApp Image 2021-06-12 at 4 40 36 PM](https://user-images.githubusercontent.com/43723746/121779722-6b928300-cb9d-11eb-9875-aa4ebf132e59.jpeg) ![Uploading WhatsApp Image 2021-06-12 at 4.38.05 PM (3).jpeg…]() 
+<img src="https://user-images.githubusercontent.com/43723746/121779710-587fb300-cb9d-11eb-89e1-2b54b4df5416.jpeg" alt="Uploading WhatsApp Image 2021-06-12 at 4.38.05 PM (3).jpeg…" width ="30%" height="30%" style="max-width:100%;">
 
 
 

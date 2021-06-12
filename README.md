@@ -10,4 +10,8 @@ Our system consists of 5 main nodes, first, the nividia jetson with acts as our 
 ## Mobile Application
 The Mobile App has three main users, first, the lifeguard receives the drowning notification directly and sends a report to the Medic to indicate whether the drowning case needs CPR only or if it needs an ambulance, or if it just was a false alarm. When the Lifeguard submits his report, the Medic gets notified about the drowning case, then he can also submit a report about the drowning case adding only comment to it. Then the OrganizationManager can view both reports submitted by the Lifeguard and the Medic, he can also delete anyone from the organization, also he can copy the organization ID in order to give it to a medic or a lifeguard to be able to signup to the organization.
 
+## Application Screenshots
+![WhatsApp Image 2021-06-12 at 4 38 03 PM](https://user-images.githubusercontent.com/43723746/121779710-587fb300-cb9d-11eb-89e1-2b54b4df5416.jpeg) ![WhatsApp Image 2021-06-12 at 4 40 36 PM](https://user-images.githubusercontent.com/43723746/121779722-6b928300-cb9d-11eb-9875-aa4ebf132e59.jpeg) ![Uploading WhatsApp Image 2021-06-12 at 4.38.05 PM (3).jpeg…]() 
+
+
 

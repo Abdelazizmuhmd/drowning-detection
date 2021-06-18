@@ -19,6 +19,52 @@ exports.alarmnotifiction = functions.firestore
       
       },
     });
+    
+  });
+
+
+exports.delaynotification = functions.firestore
+  .document('lifeguardnotifications/{alarm}')
+  .onCreate((snapshot, context) => {
+    //   console.log(snapshot.data().orgID+snapshot.data().role)
+      var id=snapshot.id;
+      setTimeout(
+                
+        delay
+       ,20000);
+function delay (){
+    admin.firestore().collection('lifeguardnotifications').doc(''+ id).get().then(function(doc) {
+        const data = doc.data();
+        +new Date();
+         if(data)
+         {
+
+             data.orgID;
+             data.sent;
+             if(!data.sent){
+             admin.firestore().collection('lifeguardreports').doc().set({
+                 comment:'automated lifeguard report',
+                 date:admin.firestore.Timestamp.fromDate(new Date),
+                 orgID:data.orgID,
+                 sent:false,
+                 sentTO:'medic',
+                 type:'Get Ambulance'
+             
+
+
+
+             })
+           }
+             console.log(data.orgID);
+         }
+       //   snapshot.data().orgID;
+         
+       
+     });
+          
+}
+ 
+    
   });
 
 exports.medicNotification = functions.firestore
